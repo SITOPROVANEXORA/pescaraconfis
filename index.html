@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Confis Pescara | Confederazione Italiana Sviluppo Imprese</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    :root {
+      --blu: #1a3460;
+      --blu-chiaro: #2558a8;
+      --oro: #c8a84b;
+      --grigio-chiaro: #f4f6fa;
+      --testo: #222;
+      --testo-chiaro: #666;
+      --bianco: #fff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      color: var(--testo);
+      background: var(--bianco);
+    }
+
+    /* ── TOPBAR ── */
+    .topbar {
+      background: var(--blu);
+      color: #ccd6f6;
+      font-size: 0.78rem;
+      padding: 7px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .topbar a { color: #ccd6f6; text-decoration: none; margin-left: 18px; }
+    .topbar a:hover { color: var(--oro); }
+    .topbar .socials a { font-size: 0.85rem; }
+
+    /* ── NAVBAR ── */
+    nav {
+      background: var(--bianco);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 5%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 18px rgba(0,0,0,0.08);
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    .logo-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--blu);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .logo-icon svg { width: 32px; height: 32px; fill: var(--oro); }
+    .logo-text { line-height: 1.1; }
+    .logo-text .name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--blu);
+      letter-spacing: 0.5px;
+    }
+    .logo-text .sub {
+      font-size: 0.65rem;
+      font-weight: 500;
+      color: var(--blu-chiaro);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 6px;
+      align-items: center;
+    }
+    .nav-links > li { position: relative; }
+    .nav-links > li > a {
+      display: block;
+      padding: 8px 13px;
+      color: var(--blu);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      border-radius: 4px;
+      transition: all .2s;
+    }
+    .nav-links > li > a:hover,
+    .nav-links > li > a.active {
+      color: var(--oro);
+      background: var(--grigio-chiaro);
+    }
+    .nav-links .dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      background: var(--bianco);
+      border: 1px solid #e8ecf4;
+      border-radius: 8px;
+      min-width: 220px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+      z-index: 200;
+    }
+    .nav-links li:hover .dropdown { display: block; }
+    .nav-links .dropdown a {
+      display: block;
+      padding: 10px 18px;
+      font-size: 0.82rem;
+      color: var(--testo);
+      text-decoration: none;
+      border-bottom: 1px solid #f0f0f0;
+      transition: .15s;
+    }
+    .nav-links .dropdown a:last-child { border-bottom: none; }
+    .nav-links .dropdown a:hover { background: var(--grigio-chiaro); color: var(--blu-chiaro); }
+
+    .btn-iscriviti {
+      background: var(--oro);
+      color: var(--blu) !important;
+      padding: 9px 20px !important;
+      border-radius: 22px !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.5px;
+      transition: all .2s !important;
+    }
+    .btn-iscriviti:hover { background: var(--blu) !important; color: var(--bianco) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(120deg, var(--blu) 55%, var(--blu-chiaro) 100%);
+      color: var(--bianco);
+      padding: 90px 5% 80px;
+      position: relative;
+      overflow: hidden;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40h2l-2 2V0zm0 4l4-4h2l-6 6V4zm0 4l8-8h2L40 10V8zm0 4L52 0h2L40 14v-2zm0 4L56 0h2L40 18v-2zm0 4L60 0h2L40 22v-2zm0 4L64 0h2L40 26v-2zm0 4L68 0h2L40 30v-2zm0 4L72 0h2L40 34v-2zm0 4L76 0h2L40 38v-2zm0 4L80 0v2L42 40h-2zm4 0L80 4v2L46 40h-2zm4 0L80 8v2L50 40h-2zm4 0L80 12v2L54 40h-2zm4 0L80 16v2L58 40h-2zm4 0L80 20v2L62 40h-2zm4 0L80 24v2L66 40h-2zm4 0L80 28v2L70 40h-2zm4 0L80 32v2L74 40h-2zm4 0L80 36v2L78 40h-2zm4 0L80 40h-2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+    }
+    .hero-content { position: relative; max-width: 700px; animation: fadeUp .8s ease both; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      background: rgba(200,168,75,0.2);
+      color: var(--oro);
+      border: 1px solid rgba(200,168,75,0.4);
+      padding: 5px 16px;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .hero h1 span { color: var(--oro); }
+    .hero h2 {
+      font-size: 1.15rem;
+      font-weight: 400;
+      opacity: 0.85;
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+    .hero p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      opacity: 0.8;
+      max-width: 580px;
+      margin-bottom: 36px;
+    }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--oro);
+      color: var(--blu);
+      padding: 13px 32px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: all .25s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-primary:hover { background: var(--bianco); color: var(--blu); transform: translateY(-2px); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--bianco);
+      padding: 13px 32px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.4);
+      transition: all .25s;
+    }
+    .btn-secondary:hover { border-color: var(--bianco); background: rgba(255,255,255,0.08); }
+
+    /* ── HIGHLIGHTS STRIP ── */
+    .highlights {
+      background: var(--blu);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 3px solid var(--oro);
+    }
+    .highlight-item {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 28px 5%;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .highlight-item:last-child { border-right: none; }
+    .highlight-item:hover { background: rgba(255,255,255,0.05); }
+    .highlight-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(200,168,75,0.15);
+      border: 1px solid rgba(200,168,75,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.2rem;
+      color: var(--oro);
+    }
+    .highlight-text h3 { color: var(--bianco); font-size: 0.92rem; font-weight: 600; margin-bottom: 3px; }
+    .highlight-text p { color: rgba(255,255,255,0.55); font-size: 0.77rem; }
+
+    /* ── SECTIONS ── */
+    section { padding: 80px 5%; }
+    .section-label {
+      display: inline-block;
+      color: var(--blu-chiaro);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      color: var(--blu);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .section-desc { color: var(--testo-chiaro); font-size: 0.97rem; line-height: 1.8; max-width: 620px; }
+
+    /* ── CHI SIAMO STRIP ── */
+    .chi-siamo-strip {
+      background: var(--grigio-chiaro);
+      padding: 60px 5%;
+    }
+    .strip-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid #dde3f0;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .strip-card {
+      padding: 40px 36px;
+      border-right: 1px solid #dde3f0;
+      text-align: center;
+      background: var(--bianco);
+      transition: .25s;
+    }
+    .strip-card:last-child { border-right: none; }
+    .strip-card:hover { background: var(--blu); }
+    .strip-card:hover h3, .strip-card:hover p, .strip-card:hover a { color: var(--bianco); }
+    .strip-card:hover .strip-icon { background: rgba(255,255,255,0.15); color: var(--oro); }
+    .strip-icon {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      background: var(--grigio-chiaro);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 18px;
+      font-size: 1.4rem;
+      color: var(--blu-chiaro);
+      transition: .25s;
+    }
+    .strip-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--blu); margin-bottom: 10px; transition: .25s; }
+    .strip-card p { font-size: 0.85rem; color: var(--testo-chiaro); line-height: 1.7; margin-bottom: 16px; transition: .25s; }
+    .strip-card a { font-size: 0.82rem; font-weight: 600; color: var(--blu-chiaro); text-decoration: none; transition: .25s; }
+    .strip-card a:hover { text-decoration: underline; }
+
+    /* ── SERVIZI GRID ── */
+    .servizi-section { background: var(--bianco); }
+    .servizi-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .servizi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .servizio-card {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e8ecf4;
+      transition: all .3s;
+      text-decoration: none;
+      display: block;
+      background: var(--bianco);
+    }
+    .servizio-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(26,52,96,0.12); border-color: var(--blu-chiaro); }
+    .servizio-img {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .servizio-img.bg1 { background: linear-gradient(135deg, #1a3460 0%, #2558a8 100%); }
+    .servizio-img.bg2 { background: linear-gradient(135deg, #2558a8 0%, #3a7bd5 100%); }
+    .servizio-img.bg3 { background: linear-gradient(135deg, #1a3460 0%, #c8a84b 100%); }
+    .servizio-img.bg4 { background: linear-gradient(135deg, #0d2240 0%, #2558a8 100%); }
+    .servizio-img.bg5 { background: linear-gradient(135deg, #c8a84b 0%, #e8c96b 100%); }
+    .servizio-img.bg6 { background: linear-gradient(135deg, #1a3460 0%, #4a8fdf 100%); }
+    .servizio-img.bg7 { background: linear-gradient(135deg, #2558a8 0%, #1a3460 100%); }
+    .servizio-img.bg8 { background: linear-gradient(135deg, #0d2240 0%, #3a7bd5 100%); }
+    .servizio-img.bg9 { background: linear-gradient(135deg, #1a3460 0%, #c8a84b 100%); }
+    .servizio-body { padding: 22px; }
+    .servizio-body h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--blu); margin-bottom: 8px; }
+    .servizio-body p { font-size: 0.82rem; color: var(--testo-chiaro); line-height: 1.65; }
+    .servizio-link { font-size: 0.78rem; font-weight: 700; color: var(--blu-chiaro); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 12px; display: inline-flex; align-items: center; gap: 4px; }
+
+    /* ── NEWS ── */
+    .news-section { background: var(--grigio-chiaro); }
+    .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 48px; }
+    .news-card {
+      background: var(--bianco);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e8ecf4;
+      transition: .25s;
+    }
+    .news-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+    .news-thumb {
+      height: 140px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.5rem;
+    }
+    .news-thumb.n1 { background: linear-gradient(135deg, #e8f0fe, #c2d6ff); }
+    .news-thumb.n2 { background: linear-gradient(135deg, #fff8e1, #ffe0a0); }
+    .news-thumb.n3 { background: linear-gradient(135deg, #e8f5e9, #a5d6a7); }
+    .news-body { padding: 20px; }
+    .news-tag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--blu-chiaro);
+      background: var(--grigio-chiaro);
+      padding: 3px 10px;
+      border-radius: 10px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    .news-body h3 { font-size: 0.95rem; font-weight: 600; color: var(--blu); line-height: 1.4; margin-bottom: 10px; }
+    .news-body p { font-size: 0.81rem; color: var(--testo-chiaro); line-height: 1.65; margin-bottom: 14px; }
+    .news-body a { font-size: 0.78rem; font-weight: 700; color: var(--blu-chiaro); text-decoration: none; }
+    .news-body a:hover { text-decoration: underline; }
+    .news-footer { text-align: center; margin-top: 40px; }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: linear-gradient(120deg, var(--blu) 0%, #0d2240 100%);
+      padding: 80px 5%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(200,168,75,0.12) 0%, transparent 70%);
+      top: -100px; right: 10%;
+      pointer-events: none;
+    }
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: var(--bianco);
+      margin-bottom: 14px;
+    }
+    .cta-section p { color: rgba(255,255,255,0.7); font-size: 1rem; max-width: 540px; margin: 0 auto 34px; }
+
+    /* ── CONTATTI ── */
+    .contatti-section { background: var(--bianco); }
+    .contatti-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .contatti-info h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--blu); margin-bottom: 24px; }
+    .info-item { display: flex; gap: 16px; margin-bottom: 22px; align-items: flex-start; }
+    .info-icon { width: 42px; height: 42px; border-radius: 50%; background: var(--grigio-chiaro); display: flex; align-items: center; justify-content: center; color: var(--blu-chiaro); flex-shrink: 0; font-size: 0.95rem; }
+    .info-item h4 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--testo-chiaro); margin-bottom: 4px; }
+    .info-item p { font-size: 0.92rem; color: var(--testo); }
+    .contatti-form { background: var(--grigio-chiaro); padding: 36px; border-radius: 14px; }
+    .contatti-form h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--blu); margin-bottom: 22px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--testo-chiaro); margin-bottom: 6px; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; padding: 11px 14px;
+      border: 1.5px solid #dde3f0;
+      border-radius: 8px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.88rem;
+      color: var(--testo);
+      background: var(--bianco);
+      transition: .2s;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      outline: none; border-color: var(--blu-chiaro);
+      box-shadow: 0 0 0 3px rgba(37,88,168,0.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .btn-form {
+      width: 100%; background: var(--blu); color: var(--bianco);
+      padding: 14px; border: none; border-radius: 8px; cursor: pointer;
+      font-family: 'Raleway', sans-serif; font-size: 0.9rem; font-weight: 700;
+      letter-spacing: 0.5px; transition: .2s;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .btn-form:hover { background: var(--blu-chiaro); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0d1f40;
+      color: rgba(255,255,255,0.75);
+      padding: 60px 5% 0;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand .logo-text .name { color: var(--bianco); }
+    .footer-brand .logo-text .sub { color: rgba(255,255,255,0.5); }
+    .footer-brand p { font-size: 0.84rem; line-height: 1.8; margin-top: 16px; margin-bottom: 22px; }
+    .footer-socials { display: flex; gap: 10px; }
+    .footer-socials a {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.6); font-size: 0.85rem;
+      text-decoration: none; transition: .2s;
+    }
+    .footer-socials a:hover { background: var(--oro); border-color: var(--oro); color: var(--blu); }
+    footer h4 { color: var(--bianco); font-size: 0.82rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 18px; }
+    footer ul { list-style: none; }
+    footer ul li { margin-bottom: 9px; }
+    footer ul li a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.84rem; transition: .2s; }
+    footer ul li a:hover { color: var(--oro); padding-left: 4px; }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      font-size: 0.78rem;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.5); text-decoration: none; }
+    .footer-bottom a:hover { color: var(--oro); }
+
+    /* ── MAP PLACEHOLDER ── */
+    .map-container {
+      width: 100%; height: 280px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #dde3f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #e8ecf4;
+      position: relative;
+      margin-top: 28px;
+    }
+    .map-placeholder {
+      text-align: center;
+      color: var(--blu);
+    }
+    .map-placeholder i { font-size: 2.5rem; color: var(--oro); margin-bottom: 10px; display: block; }
+    .map-placeholder p { font-size: 0.92rem; font-weight: 600; }
+    .map-placeholder small { font-size: 0.78rem; color: var(--testo-chiaro); }
+
+    /* ── HAMBURGER ── */
+    .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--blu); border-radius: 2px; transition: .3s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .servizi-grid { grid-template-columns: repeat(2, 1fr); }
+      .news-grid { grid-template-columns: 1fr 1fr; }
+      .contatti-grid { grid-template-columns: 1fr; }
+      .strip-grid { grid-template-columns: 1fr; }
+      .strip-card { border-right: none; border-bottom: 1px solid #dde3f0; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .highlights { grid-template-columns: 1fr; }
+      .highlight-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    }
+    @media (max-width: 650px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .servizi-grid, .news-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .topbar .info { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="info">
+    <i class="fas fa-map-marker-alt"></i> Via dei Marrucini 51, Pescara &nbsp;|&nbsp;
+    <i class="fas fa-phone"></i> +39 085 000 0000 &nbsp;|&nbsp;
+    <i class="fas fa-envelope"></i> info@confispescara.it
+  </div>
+  <div class="socials">
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="#" class="logo-area">
+    <div class="logo-icon">
+      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 35V15l15-10 15 10v20H5z" fill="none" stroke="#c8a84b" stroke-width="2.5"/>
+        <path d="M14 35V24h12v11" fill="none" stroke="#c8a84b" stroke-width="2"/>
+        <circle cx="20" cy="17" r="3" fill="#c8a84b"/>
+      </svg>
+    </div>
+    <div class="logo-text">
+      <div class="name">Confis Pescara</div>
+      <div class="sub">Confederazione Italiana Sviluppo Imprese</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#chi-siamo">Chi siamo</a></li>
+    <li>
+      <a href="#servizi">Servizi ▾</a>
+      <div class="dropdown">
+        <a href="#">Area Lavoro</a>
+        <a href="#">Welfare</a>
+        <a href="#">Formazione</a>
+        <a href="#">Internazionalizzazione</a>
+        <a href="#">Finanza Agevolata</a>
+        <a href="#">Sicurezza sul Lavoro</a>
+        <a href="#">Medicina del Lavoro</a>
+        <a href="#">Innovazione Tecnologica</a>
+        <a href="#">Sostenibilità</a>
+      </div>
+    </li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contatti">Contatti</a></li>
+    <li><a href="#contatti" class="btn-iscriviti">Iscriviti</a></li>
+  </ul>
+  <div class="hamburger" onclick="this.closest('nav').querySelector('.nav-links').style.display='flex'">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-eyebrow"><i class="fas fa-star"></i> &nbsp;Unione Territoriale · Pescara</div>
+    <h1>Al fianco delle <span>imprese</span> abruzzesi</h1>
+    <h2>Rappresentiamo e tuteliamo le imprese di Pescara e provincia</h2>
+    <p>
+      Associazione di rappresentanza sindacale dei datori di lavoro, apartitica e senza scopo di lucro.
+      Offriamo assistenza, tutela sindacale, sicurezza sul lavoro, formazione e consulenza contrattuale
+      alle imprese del territorio pescarese.
+    </p>
+    <div class="hero-btns">
+      <a href="#servizi" class="btn-primary"><i class="fas fa-briefcase"></i> Scopri i Servizi</a>
+      <a href="#contatti" class="btn-secondary">Contattaci</a>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS STRIP -->
+<div class="highlights">
+  <a href="#chi-siamo" class="highlight-item">
+    <div class="highlight-icon"><i class="fas fa-users"></i></div>
+    <div class="highlight-text">
+      <h3>Chi Siamo</h3>
+      <p>Rappresentanza sindacale apartitica</p>
+    </div>
+  </a>
+  <a href="#servizi" class="highlight-item">
+    <div class="highlight-icon"><i class="fas fa-layer-group"></i></div>
+    <div class="highlight-text">
+      <h3>I Nostri Servizi</h3>
+      <p>Assistenza completa alle imprese</p>
+    </div>
+  </a>
+  <a href="#contatti" class="highlight-item">
+    <div class="highlight-icon"><i class="fas fa-file-signature"></i></div>
+    <div class="highlight-text">
+      <h3>Come Iscriversi</h3>
+      <p>Entra nella rete Confis Pescara</p>
+    </div>
+  </a>
+</div>
+
+<!-- CHI SIAMO STRIP -->
+<div class="chi-siamo-strip" id="chi-siamo">
+  <div class="strip-grid">
+    <div class="strip-card">
+      <div class="strip-icon"><i class="fas fa-handshake"></i></div>
+      <h3>Chi Siamo</h3>
+      <p>Associazione di Rappresentanza Sindacale dei Datori di Lavoro, apartitica e senza scopo di lucro, presente a Pescara.</p>
+      <a href="#">Vieni a conoscerci →</a>
+    </div>
+    <div class="strip-card">
+      <div class="strip-icon"><i class="fas fa-cogs"></i></div>
+      <h3>I Servizi</h3>
+      <p>Servizi per promuovere uno sviluppo sicuro, sostenibile e in linea con le normative vigenti per le imprese del territorio.</p>
+      <a href="#servizi">Approfondisci ora →</a>
+    </div>
+    <div class="strip-card">
+      <div class="strip-icon"><i class="fas fa-star"></i></div>
+      <h3>Convenzioni</h3>
+      <p>Gli associati di Confis Pescara hanno accesso a un'ampia gamma di convenzioni esclusive riservate ai soci.</p>
+      <a href="#contatti">Scopri di più →</a>
+    </div>
+  </div>
+</div>
+
+<!-- SERVIZI -->
+<section class="servizi-section" id="servizi">
+  <div class="servizi-header">
+    <div>
+      <span class="section-label">Cosa offriamo</span>
+      <h2 class="section-title">I nostri servizi,<br>le opportunità per i soci</h2>
+      <p class="section-desc">Offriamo servizi in termini di assistenza ai soci, tutela sindacale, sicurezza sul lavoro ai sensi del d.lgs. 81/08, formazione e consulenza contrattuale.</p>
+    </div>
+  </div>
+  <div class="servizi-grid">
+    <a href="#" class="servizio-card">
+      <div class="servizio-img bg1"><i class="fas fa-heart" style="color:#c8a84b"></i></div>
+      <div class="servizio-body">
+        <h3>Welfare</h3>
+        <p>Soluzioni di welfare aziendale per migliorare il benessere dei dipendenti e ottimizzare la gestione fiscale.</p>
+        <div class="servizio-link">Scopri di più <i class="fas fa-arrow-right"></i></div>
+      </div>
+    </a>
+    <a href="#" class="servizio-card">
+      <div class="servizio-img bg2"><i class="fas fa-shield-alt" style="color:#fff"></i></div>
+      <div class="servizio-body">
+        <h3>Sicurezza sul Lavoro</h3>
+        <p>Consulenza completa sulla sicurezza e salute nei luoghi di lavoro secondo il d.lgs. 81/2008.</p>
+        <div class="servizio-link">Scopri di più <i class="fas fa-arrow-right"></i></div>
+      </div>
+    </a>
+    <a href="#" class="servizio-card">
+      <div class="servizio-img bg3"><i class="fas fa-graduation-cap" style="color:#fff"></i></div>
+      <div class="servizio-body">
+        <h3>Formazione</h3>
+        <p>Corsi e programmi formativi accreditati per la crescita professionale delle risorse umane aziendali.</p>
+        <div class="servizio-link">Scopri di più <i class="fas fa-arrow-right"></i></div>
+      </div>
+    </a>
+    <a href="#" class="servizio-card">
+      <div class="servizio-img bg4"><i class="fas fa-microchip" style="color:#c8a84b"></i></div>
+      <div class="servizio-body">
+        <h3>Innovazione Tecnologica</h3>
+        <p>Supporto nell'adozione di nuove tecnologie e nella trasformazione digitale delle imprese associate.</p>
+        <div class="servizio-link">Scopri di più <i class="fas fa-arrow-right"></i></div>
+      </div>
+    </a>
+    <a href="#" class="servizio-card">
+      <div class="servizio-img bg5"><i class="fas fa-briefcase" style="color:#1a3460"></i></div>
+      <div class="servizio-body">
+        <h3>Area Lavoro</h3>
+        <p>Assistenza nella gestione dei rapporti di lavoro, contrattualistica e relazioni sindacali.</p>
+        <div class="servizio-link">Scopri di più <i class="fas fa-arrow-right"></i></div>
+      </div>
+    </a>
+    <a href="#" class="servizio-card">
+      <div class="servizio-img bg6"><i class="fas fa-globe" style="color:#fff"></i></div>
+      <div class="servizio-body">
+        <h3>Internazionalizzazione</h3>
+        <p>Supporto alle imprese che vogliono espandersi sui mercati internazionali e gestire operazioni estere.</p>
+        <div class="servizio-link">Scopri di più <i class="fas fa-arrow-right"></i></div>
+      </div>
+    </a>
+    <a href="#" class="servizio-card">
+      <div class="servizio-img bg7"><i class="fas fa-stethoscope" style="color:#c8a84b"></i></div>
+      <div class="servizio-body">
+        <h3>Medicina del Lavoro</h3>
+        <p>Sorveglianza sanitaria dei lavoratori e gestione degli adempimenti normativi in materia sanitaria.</p>
+        <div class="servizio-link">Scopri di più <i class="fas fa-arrow-right"></i></div>
+      </div>
+    </a>
+    <a href="#" class="servizio-card">
+      <div class="servizio-img bg8"><i class="fas fa-chart-line" style="color:#c8a84b"></i></div>
+      <div class="servizio-body">
+        <h3>Finanza Agevolata</h3>
+        <p>Accesso a finanziamenti, bandi e contributi pubblici per sostenere gli investimenti aziendali.</p>
+        <div class="servizio-link">Scopri di più <i class="fas fa-arrow-right"></i></div>
+      </div>
+    </a>
+    <a href="#" class="servizio-card">
+      <div class="servizio-img bg9"><i class="fas fa-leaf" style="color:#fff"></i></div>
+      <div class="servizio-body">
+        <h3>Sostenibilità</h3>
+        <p>Percorsi per integrare strategie ESG e pratiche sostenibili nel modello di business aziendale.</p>
+        <div class="servizio-link">Scopri di più <i class="fas fa-arrow-right"></i></div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="news-section" id="news">
+  <span class="section-label">Resta informato</span>
+  <h2 class="section-title">Ultime notizie e aggiornamenti</h2>
+  <p class="section-desc">Ricevi tutti gli aggiornamenti e scopri le novità tramite il nostro blog e le ultime news dal territorio.</p>
+  <div class="news-grid">
+    <div class="news-card">
+      <div class="news-thumb n1"><i class="fas fa-running"></i></div>
+      <div class="news-body">
+        <span class="news-tag">News</span>
+        <h3>Composizione Enti di Promozione Sportiva: chiarimenti e approfondimenti</h3>
+        <p>Aggiornamenti normativi sulla composizione degli enti di promozione sportiva e le implicazioni per le imprese associate.</p>
+        <a href="#">Leggi di più »</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="news-thumb n2"><i class="fas fa-car"></i></div>
+      <div class="news-body">
+        <span class="news-tag">News</span>
+        <h3>Noleggio a lungo termine: le opportunità per i soci Confis Pescara</h3>
+        <p>Scopri le convenzioni esclusive riservate agli associati per il noleggio a lungo termine di veicoli aziendali.</p>
+        <a href="#">Leggi di più »</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="news-thumb n3"><i class="fas fa-chart-bar"></i></div>
+      <div class="news-body">
+        <span class="news-tag">Evento</span>
+        <h3>"Come ridurre i costi aziendali": webinar gratuito per gli associati</h3>
+        <p>Partecipa al webinar gratuito dedicato alle strategie più efficaci per ottimizzare i costi della tua impresa.</p>
+        <a href="#">Leggi di più »</a>
+      </div>
+    </div>
+  </div>
+  <div class="news-footer">
+    <a href="#" class="btn-primary" style="display:inline-flex"><i class="fas fa-newspaper"></i> Vedi tutti gli articoli</a>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <span class="section-label" style="color:var(--oro)">Unisciti a noi</span>
+  <h2>Vuoi aderire a Confis Pescara?</h2>
+  <p>Entra a far parte della rete e accedi a tutti i servizi riservati ai nostri associati.</p>
+  <a href="#contatti" class="btn-primary"><i class="fas fa-file-signature"></i> Iscriviti a Confis Pescara</a>
+</section>
+
+<!-- CONTATTI -->
+<section class="contatti-section" id="contatti">
+  <span class="section-label">Dove siamo</span>
+  <h2 class="section-title" style="margin-bottom:48px">Contattaci</h2>
+  <div class="contatti-grid">
+    <div class="contatti-info">
+      <h3>Confis Pescara</h3>
+      <div class="info-item">
+        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div>
+          <h4>Indirizzo</h4>
+          <p>Via dei Marrucini 51<br>65100 Pescara (PE)</p>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon"><i class="fas fa-phone"></i></div>
+        <div>
+          <h4>Telefono</h4>
+          <p>+39 085 000 0000</p>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+        <div>
+          <h4>Email</h4>
+          <p>info@confispescara.it</p>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon"><i class="fas fa-clock"></i></div>
+        <div>
+          <h4>Orari di apertura</h4>
+          <p>Lun – Ven: 09:00 – 13:00 / 15:00 – 18:00<br>Sab: 09:00 – 12:00</p>
+        </div>
+      </div>
+      <div class="map-container">
+        <div class="map-placeholder">
+          <i class="fas fa-map-marked-alt"></i>
+          <p>Via dei Marrucini 51, Pescara</p>
+          <small>Clicca per aprire in Google Maps</small>
+        </div>
+      </div>
+    </div>
+    <div class="contatti-form">
+      <h3>Inviaci un messaggio</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Nome *</label>
+          <input type="text" placeholder="Il tuo nome"/>
+        </div>
+        <div class="form-group">
+          <label>Cognome *</label>
+          <input type="text" placeholder="Il tuo cognome"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email *</label>
+        <input type="email" placeholder="la-tua@email.it"/>
+      </div>
+      <div class="form-group">
+        <label>Telefono</label>
+        <input type="tel" placeholder="+39 ..."/>
+      </div>
+      <div class="form-group">
+        <label>Servizio di interesse</label>
+        <select>
+          <option>Seleziona un servizio...</option>
+          <option>Area Lavoro</option>
+          <option>Welfare</option>
+          <option>Formazione</option>
+          <option>Internazionalizzazione</option>
+          <option>Finanza Agevolata</option>
+          <option>Sicurezza sul Lavoro</option>
+          <option>Medicina del Lavoro</option>
+          <option>Innovazione Tecnologica</option>
+          <option>Sostenibilità</option>
+          <option>Iscrizione</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Messaggio *</label>
+        <textarea placeholder="Scrivi il tuo messaggio..."></textarea>
+      </div>
+      <button class="btn-form"><i class="fas fa-paper-plane"></i> Invia messaggio</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo-area" style="display:flex;gap:12px;align-items:center;margin-bottom:0">
+        <div class="logo-icon" style="width:44px;height:44px">
+          <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" style="width:26px;height:26px">
+            <path d="M5 35V15l15-10 15 10v20H5z" fill="none" stroke="#c8a84b" stroke-width="2.5"/>
+            <path d="M14 35V24h12v11" fill="none" stroke="#c8a84b" stroke-width="2"/>
+            <circle cx="20" cy="17" r="3" fill="#c8a84b"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <div class="name" style="font-size:1.1rem">Confis Pescara</div>
+          <div class="sub">Confederazione Italiana Sviluppo Imprese</div>
+        </div>
+      </div>
+      <p style="margin-top:16px">Associazione di Rappresentanza Sindacale dei Datori di Lavoro. Al servizio delle imprese di Pescara e provincia per uno sviluppo sicuro e sostenibile.</p>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+    <div>
+      <h4>Navigazione</h4>
+      <ul>
+        <li><a href="#chi-siamo">Chi Siamo</a></li>
+        <li><a href="#servizi">Servizi</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+        <li><a href="#contatti">Come Iscriversi</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Servizi</h4>
+      <ul>
+        <li><a href="#">Area Lavoro</a></li>
+        <li><a href="#">Welfare</a></li>
+        <li><a href="#">Formazione</a></li>
+        <li><a href="#">Finanza Agevolata</a></li>
+        <li><a href="#">Sicurezza sul Lavoro</a></li>
+        <li><a href="#">Sostenibilità</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contatti</h4>
+      <ul>
+        <li><a href="#"><i class="fas fa-map-marker-alt" style="width:14px"></i> Via dei Marrucini 51, Pescara</a></li>
+        <li><a href="tel:+390850000000"><i class="fas fa-phone" style="width:14px"></i> +39 085 000 0000</a></li>
+        <li><a href="mailto:info@confispescara.it"><i class="fas fa-envelope" style="width:14px"></i> info@confispescara.it</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>Copyright © 2025, Confis Pescara. Tutti i diritti riservati.</span>
+    <div style="display:flex;gap:20px">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Cookie Policy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
