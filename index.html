@@ -1,929 +1,407 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Confis Pescara | Confederazione Italiana Sviluppo Imprese</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <style>
-    :root {
-      --blu: #1a3460;
-      --blu-chiaro: #2558a8;
-      --oro: #c8a84b;
-      --grigio-chiaro: #f4f6fa;
-      --testo: #222;
-      --testo-chiaro: #666;
-      --bianco: #fff;
-    }
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Confis Pescara | Confederazione Italiana Sviluppo Imprese</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--blu:#1b3a6b;--blu2:#1d4e8f;--bianco:#ffffff;--grigio:#f5f5f5;--testo:#333;--testo2:#666;--oro:#c8a84b;}
+html{scroll-behavior:smooth;}
+body{font-family:'Montserrat',sans-serif;color:var(--testo);background:#fff;}
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+/* HEADER */
+header{position:sticky;top:0;z-index:900;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.10);display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:80px;}
+.logo-wrap{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.logo-box{width:52px;height:52px;background:var(--blu);border-radius:6px;display:flex;align-items:center;justify-content:center;}
+.logo-box svg{width:34px;height:34px;}
+.logo-txt .main{font-size:1.15rem;font-weight:800;color:var(--blu);line-height:1.1;}
+.logo-txt .sub{font-size:0.57rem;font-weight:600;color:var(--blu2);letter-spacing:1.1px;text-transform:uppercase;}
+nav ul{list-style:none;display:flex;align-items:center;gap:2px;}
+nav ul li{position:relative;}
+nav ul li>a{display:block;padding:10px 12px;font-size:.77rem;font-weight:600;letter-spacing:.3px;text-transform:uppercase;color:var(--testo);text-decoration:none;border-radius:4px;transition:.2s;}
+nav ul li>a:hover{color:var(--blu2);}
+nav ul li .sub-menu{display:none;position:absolute;top:100%;left:0;background:#fff;min-width:224px;border-top:3px solid var(--blu2);box-shadow:0 8px 24px rgba(0,0,0,.12);border-radius:0 0 8px 8px;z-index:999;}
+nav ul li:hover .sub-menu{display:block;}
+nav ul li .sub-menu a{display:block;padding:11px 18px;font-size:.79rem;font-weight:500;color:var(--testo);text-decoration:none;border-bottom:1px solid #f0f0f0;transition:.15s;}
+nav ul li .sub-menu a:last-child{border-bottom:none;}
+nav ul li .sub-menu a:hover{background:#f5f8ff;color:var(--blu2);padding-left:24px;}
+.nav-cta{background:var(--blu)!important;color:#fff!important;border-radius:25px!important;padding:10px 20px!important;font-weight:700!important;}
+.nav-cta:hover{background:var(--blu2)!important;}
+.hamburger{display:none;cursor:pointer;background:none;border:none;padding:6px;flex-direction:column;gap:5px;}
+.hamburger span{display:block;width:24px;height:2px;background:var(--blu);}
 
-    html { scroll-behavior: smooth; }
+/* HERO */
+.hero{background:linear-gradient(110deg,var(--blu) 0%,var(--blu2) 100%);color:#fff;padding:100px 5% 90px;min-height:540px;display:flex;align-items:center;position:relative;overflow:hidden;}
+.hero::after{content:'';position:absolute;right:-80px;top:-80px;width:520px;height:520px;border-radius:50%;background:rgba(255,255,255,.04);}
+.hero-inner{position:relative;max-width:680px;}
+.hero h1{font-size:clamp(1.8rem,3.2vw,2.9rem);font-weight:800;line-height:1.2;margin-bottom:16px;}
+.hero h2{font-size:1rem;font-weight:400;opacity:.85;margin-bottom:22px;line-height:1.7;}
+.hero p{font-size:.88rem;line-height:1.85;opacity:.78;margin-bottom:34px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-w{background:#fff;color:var(--blu);padding:13px 28px;border-radius:30px;font-weight:700;font-size:.83rem;text-decoration:none;transition:.2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-w:hover{background:var(--oro);color:#fff;}
+.btn-o{background:transparent;color:#fff;padding:13px 28px;border-radius:30px;font-weight:600;font-size:.83rem;text-decoration:none;border:2px solid rgba(255,255,255,.4);transition:.2s;}
+.btn-o:hover{border-color:#fff;background:rgba(255,255,255,.08);}
 
-    body {
-      font-family: 'Raleway', sans-serif;
-      color: var(--testo);
-      background: var(--bianco);
-    }
+/* STRIP 3 BOX */
+.strip{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:3px solid #eee;}
+.strip-box{padding:44px 38px;text-align:center;border-right:1px solid #e8e8e8;transition:.25s;cursor:pointer;}
+.strip-box:last-child{border-right:none;}
+.strip-box:hover{background:var(--blu);}
+.strip-box:hover h3,.strip-box:hover p,.strip-box:hover .s-lnk{color:#fff!important;}
+.strip-box:hover .s-ico{background:rgba(255,255,255,.15);color:var(--oro);}
+.s-ico{width:64px;height:64px;border-radius:50%;background:var(--grigio);margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--blu2);transition:.25s;}
+.strip-box h3{font-size:1.02rem;font-weight:700;color:var(--blu);margin-bottom:10px;}
+.strip-box p{font-size:.81rem;color:var(--testo2);line-height:1.7;margin-bottom:14px;}
+.s-lnk{font-size:.79rem;font-weight:700;color:var(--blu2);text-decoration:none;display:inline-block;}
 
-    /* ── TOPBAR ── */
-    .topbar {
-      background: var(--blu);
-      color: #ccd6f6;
-      font-size: 0.78rem;
-      padding: 7px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .topbar a { color: #ccd6f6; text-decoration: none; margin-left: 18px; }
-    .topbar a:hover { color: var(--oro); }
-    .topbar .socials a { font-size: 0.85rem; }
+/* SECTIONS */
+.section{padding:80px 5%;}
+.section.bg-grey{background:var(--grigio);}
+.s-eyebrow{font-size:.67rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--blu2);margin-bottom:10px;display:block;}
+.s-title{font-size:clamp(1.5rem,2.6vw,2.2rem);font-weight:800;color:var(--blu);line-height:1.2;margin-bottom:14px;}
+.s-desc{font-size:.89rem;color:var(--testo2);line-height:1.8;max-width:640px;}
 
-    /* ── NAVBAR ── */
-    nav {
-      background: var(--bianco);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 5%;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 18px rgba(0,0,0,0.08);
-    }
+/* SERVIZI GRID */
+.servizi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:52px;border:1px solid #ddd;border-radius:12px;overflow:hidden;}
+.serv-card{position:relative;overflow:hidden;cursor:pointer;aspect-ratio:4/3;display:flex;align-items:flex-end;}
+.serv-bg{position:absolute;inset:0;transition:transform .4s;}
+.serv-card:hover .serv-bg{transform:scale(1.06);}
+.serv-icon-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:4.5rem;color:rgba(255,255,255,.1);}
+.serv-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,28,65,.85) 0%,rgba(12,28,65,.15) 55%,transparent 100%);transition:.3s;}
+.serv-card:hover .serv-overlay{background:linear-gradient(to top,rgba(12,28,65,.93) 0%,rgba(12,28,65,.45) 70%,transparent 100%);}
+.serv-body{position:relative;z-index:2;padding:20px 22px;display:flex;justify-content:space-between;align-items:flex-end;width:100%;}
+.serv-body h3{font-size:.95rem;font-weight:700;color:#fff;}
+.arrow-btn{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.78rem;flex-shrink:0;transition:.2s;}
+.serv-card:hover .arrow-btn{background:var(--oro);border-color:var(--oro);}
 
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      text-decoration: none;
-    }
-    .logo-icon {
-      width: 52px;
-      height: 52px;
-      background: var(--blu);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .logo-icon svg { width: 32px; height: 32px; fill: var(--oro); }
-    .logo-text { line-height: 1.1; }
-    .logo-text .name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: var(--blu);
-      letter-spacing: 0.5px;
-    }
-    .logo-text .sub {
-      font-size: 0.65rem;
-      font-weight: 500;
-      color: var(--blu-chiaro);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
+/* NEWS */
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:50px;}
+.news-card{background:#fff;border-radius:10px;overflow:hidden;border:1px solid #e8e8e8;transition:.25s;cursor:pointer;}
+.news-card:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(0,0,0,.09);}
+.news-thumb-ph{height:148px;display:flex;align-items:center;justify-content:center;font-size:2.8rem;}
+.n1{background:linear-gradient(135deg,#dde8ff,#b8ccff);}
+.n2{background:linear-gradient(135deg,#fff3cd,#ffd877);}
+.n3{background:linear-gradient(135deg,#d4edda,#8fc99a);}
+.news-body{padding:22px;}
+.news-tag{display:inline-block;font-size:.6rem;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;background:var(--grigio);color:var(--blu2);padding:3px 10px;border-radius:10px;margin-bottom:10px;}
+.news-body h3{font-size:.88rem;font-weight:700;color:var(--blu);line-height:1.45;margin-bottom:12px;}
+.news-body a{font-size:.77rem;font-weight:700;color:var(--blu2);text-decoration:none;}
+.news-body a:hover{text-decoration:underline;}
+.news-cta{text-align:center;margin-top:42px;}
 
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 6px;
-      align-items: center;
-    }
-    .nav-links > li { position: relative; }
-    .nav-links > li > a {
-      display: block;
-      padding: 8px 13px;
-      color: var(--blu);
-      text-decoration: none;
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      border-radius: 4px;
-      transition: all .2s;
-    }
-    .nav-links > li > a:hover,
-    .nav-links > li > a.active {
-      color: var(--oro);
-      background: var(--grigio-chiaro);
-    }
-    .nav-links .dropdown {
-      display: none;
-      position: absolute;
-      top: calc(100% + 6px);
-      left: 0;
-      background: var(--bianco);
-      border: 1px solid #e8ecf4;
-      border-radius: 8px;
-      min-width: 220px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-      z-index: 200;
-    }
-    .nav-links li:hover .dropdown { display: block; }
-    .nav-links .dropdown a {
-      display: block;
-      padding: 10px 18px;
-      font-size: 0.82rem;
-      color: var(--testo);
-      text-decoration: none;
-      border-bottom: 1px solid #f0f0f0;
-      transition: .15s;
-    }
-    .nav-links .dropdown a:last-child { border-bottom: none; }
-    .nav-links .dropdown a:hover { background: var(--grigio-chiaro); color: var(--blu-chiaro); }
+/* CTA BAND */
+.cta-band{background:linear-gradient(110deg,var(--blu) 0%,#0d2040 100%);padding:80px 5%;text-align:center;color:#fff;}
+.cta-band .eyebrow{font-size:.65rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--oro);margin-bottom:12px;display:block;}
+.cta-band h2{font-size:clamp(1.4rem,2.6vw,2rem);font-weight:800;margin-bottom:10px;}
+.cta-band p{opacity:.72;font-size:.88rem;margin-bottom:28px;}
 
-    .btn-iscriviti {
-      background: var(--oro);
-      color: var(--blu) !important;
-      padding: 9px 20px !important;
-      border-radius: 22px !important;
-      font-weight: 700 !important;
-      letter-spacing: 0.5px;
-      transition: all .2s !important;
-    }
-    .btn-iscriviti:hover { background: var(--blu) !important; color: var(--bianco) !important; }
+/* FOOTER */
+footer{background:#0e1e3d;color:rgba(255,255,255,.7);padding:60px 5% 0;}
+.footer-top{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:44px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.08);}
+.f-logo-main{color:#fff;font-size:1.05rem;font-weight:800;}
+.f-logo-sub{color:rgba(255,255,255,.4);font-size:.55rem;letter-spacing:1.1px;text-transform:uppercase;}
+.footer-about{font-size:.81rem;line-height:1.8;margin:14px 0 20px;}
+.f-socials{display:flex;gap:10px;}
+.f-socials a{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:.82rem;text-decoration:none;transition:.2s;}
+.f-socials a:hover{background:var(--oro);border-color:var(--oro);color:var(--blu);}
+footer h4{color:#fff;font-size:.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px;}
+footer ul{list-style:none;}
+footer ul li{margin-bottom:9px;}
+footer ul li a{color:rgba(255,255,255,.6);text-decoration:none;font-size:.81rem;transition:.2s;}
+footer ul li a:hover{color:var(--oro);padding-left:4px;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:.73rem;flex-wrap:wrap;gap:10px;}
+.footer-bottom a{color:rgba(255,255,255,.4);text-decoration:none;margin-left:16px;}
+.footer-bottom a:hover{color:var(--oro);}
 
-    /* ── HERO ── */
-    .hero {
-      background: linear-gradient(120deg, var(--blu) 55%, var(--blu-chiaro) 100%);
-      color: var(--bianco);
-      padding: 90px 5% 80px;
-      position: relative;
-      overflow: hidden;
-      min-height: 520px;
-      display: flex;
-      align-items: center;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40h2l-2 2V0zm0 4l4-4h2l-6 6V4zm0 4l8-8h2L40 10V8zm0 4L52 0h2L40 14v-2zm0 4L56 0h2L40 18v-2zm0 4L60 0h2L40 22v-2zm0 4L64 0h2L40 26v-2zm0 4L68 0h2L40 30v-2zm0 4L72 0h2L40 34v-2zm0 4L76 0h2L40 38v-2zm0 4L80 0v2L42 40h-2zm4 0L80 4v2L46 40h-2zm4 0L80 8v2L50 40h-2zm4 0L80 12v2L54 40h-2zm4 0L80 16v2L58 40h-2zm4 0L80 20v2L62 40h-2zm4 0L80 24v2L66 40h-2zm4 0L80 28v2L70 40h-2zm4 0L80 32v2L74 40h-2zm4 0L80 36v2L78 40h-2zm4 0L80 40h-2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
-    }
-    .hero-content { position: relative; max-width: 700px; animation: fadeUp .8s ease both; }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .hero-eyebrow {
-      display: inline-block;
-      background: rgba(200,168,75,0.2);
-      color: var(--oro);
-      border: 1px solid rgba(200,168,75,0.4);
-      padding: 5px 16px;
-      border-radius: 20px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 22px;
-    }
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 700;
-      line-height: 1.15;
-      margin-bottom: 14px;
-    }
-    .hero h1 span { color: var(--oro); }
-    .hero h2 {
-      font-size: 1.15rem;
-      font-weight: 400;
-      opacity: 0.85;
-      margin-bottom: 28px;
-      line-height: 1.6;
-    }
-    .hero p {
-      font-size: 0.95rem;
-      line-height: 1.8;
-      opacity: 0.8;
-      max-width: 580px;
-      margin-bottom: 36px;
-    }
-    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn-primary {
-      background: var(--oro);
-      color: var(--blu);
-      padding: 13px 32px;
-      border-radius: 30px;
-      font-weight: 700;
-      font-size: 0.88rem;
-      text-decoration: none;
-      letter-spacing: 0.5px;
-      transition: all .25s;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .btn-primary:hover { background: var(--bianco); color: var(--blu); transform: translateY(-2px); }
-    .btn-secondary {
-      background: transparent;
-      color: var(--bianco);
-      padding: 13px 32px;
-      border-radius: 30px;
-      font-weight: 600;
-      font-size: 0.88rem;
-      text-decoration: none;
-      border: 2px solid rgba(255,255,255,0.4);
-      transition: all .25s;
-    }
-    .btn-secondary:hover { border-color: var(--bianco); background: rgba(255,255,255,0.08); }
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9999;align-items:center;justify-content:center;padding:20px;}
+.modal-overlay.open{display:flex;animation:fadeIn .2s ease;}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+.modal{background:#fff;border-radius:14px;max-width:680px;width:100%;max-height:90vh;overflow-y:auto;position:relative;animation:slideUp .25s ease;box-shadow:0 24px 60px rgba(0,0,0,.2);}
+@keyframes slideUp{from{transform:translateY(30px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+.modal-head{background:linear-gradient(110deg,var(--blu),var(--blu2));padding:36px 40px 30px;color:#fff;border-radius:14px 14px 0 0;display:flex;align-items:flex-start;gap:18px;}
+.modal-ico{width:58px;height:58px;border-radius:50%;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;font-size:1.45rem;flex-shrink:0;color:var(--oro);}
+.modal-head h2{font-size:1.35rem;font-weight:800;margin-bottom:5px;}
+.modal-head p{font-size:.83rem;opacity:.8;line-height:1.6;}
+.modal-close{position:absolute;top:14px;right:16px;background:rgba(255,255,255,.18);border:none;width:30px;height:30px;border-radius:50%;color:#fff;font-size:.9rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s;}
+.modal-close:hover{background:rgba(255,255,255,.32);}
+.modal-body{padding:34px 40px;}
+.modal-body h3{font-size:.95rem;font-weight:700;color:var(--blu);margin:20px 0 9px;}
+.modal-body h3:first-child{margin-top:0;}
+.modal-body p{font-size:.84rem;color:var(--testo2);line-height:1.82;margin-bottom:10px;}
+.modal-body ul{margin:0 0 12px 18px;}
+.modal-body ul li{font-size:.84rem;color:var(--testo2);line-height:1.8;margin-bottom:4px;}
+.modal-body ul li::marker{color:var(--blu2);}
+.modal-cta{margin-top:26px;padding-top:22px;border-top:1px solid #eee;display:flex;gap:12px;flex-wrap:wrap;}
+.mbtn-p{background:var(--blu);color:#fff;padding:11px 24px;border-radius:25px;font-size:.81rem;font-weight:700;text-decoration:none;border:none;cursor:pointer;font-family:'Montserrat',sans-serif;transition:.2s;}
+.mbtn-p:hover{background:var(--blu2);}
+.mbtn-s{background:#fff;color:var(--blu);padding:11px 24px;border-radius:25px;font-size:.81rem;font-weight:700;border:2px solid var(--blu);cursor:pointer;font-family:'Montserrat',sans-serif;transition:.2s;}
+.mbtn-s:hover{background:var(--grigio);}
 
-    /* ── HIGHLIGHTS STRIP ── */
-    .highlights {
-      background: var(--blu);
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-top: 3px solid var(--oro);
-    }
-    .highlight-item {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      padding: 28px 5%;
-      border-right: 1px solid rgba(255,255,255,0.1);
-      text-decoration: none;
-      transition: background .2s;
-    }
-    .highlight-item:last-child { border-right: none; }
-    .highlight-item:hover { background: rgba(255,255,255,0.05); }
-    .highlight-icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: rgba(200,168,75,0.15);
-      border: 1px solid rgba(200,168,75,0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 1.2rem;
-      color: var(--oro);
-    }
-    .highlight-text h3 { color: var(--bianco); font-size: 0.92rem; font-weight: 600; margin-bottom: 3px; }
-    .highlight-text p { color: rgba(255,255,255,0.55); font-size: 0.77rem; }
-
-    /* ── SECTIONS ── */
-    section { padding: 80px 5%; }
-    .section-label {
-      display: inline-block;
-      color: var(--blu-chiaro);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      color: var(--blu);
-      margin-bottom: 16px;
-      line-height: 1.2;
-    }
-    .section-desc { color: var(--testo-chiaro); font-size: 0.97rem; line-height: 1.8; max-width: 620px; }
-
-    /* ── CHI SIAMO STRIP ── */
-    .chi-siamo-strip {
-      background: var(--grigio-chiaro);
-      padding: 60px 5%;
-    }
-    .strip-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
-      border: 1px solid #dde3f0;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    .strip-card {
-      padding: 40px 36px;
-      border-right: 1px solid #dde3f0;
-      text-align: center;
-      background: var(--bianco);
-      transition: .25s;
-    }
-    .strip-card:last-child { border-right: none; }
-    .strip-card:hover { background: var(--blu); }
-    .strip-card:hover h3, .strip-card:hover p, .strip-card:hover a { color: var(--bianco); }
-    .strip-card:hover .strip-icon { background: rgba(255,255,255,0.15); color: var(--oro); }
-    .strip-icon {
-      width: 60px; height: 60px;
-      border-radius: 50%;
-      background: var(--grigio-chiaro);
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 18px;
-      font-size: 1.4rem;
-      color: var(--blu-chiaro);
-      transition: .25s;
-    }
-    .strip-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--blu); margin-bottom: 10px; transition: .25s; }
-    .strip-card p { font-size: 0.85rem; color: var(--testo-chiaro); line-height: 1.7; margin-bottom: 16px; transition: .25s; }
-    .strip-card a { font-size: 0.82rem; font-weight: 600; color: var(--blu-chiaro); text-decoration: none; transition: .25s; }
-    .strip-card a:hover { text-decoration: underline; }
-
-    /* ── SERVIZI GRID ── */
-    .servizi-section { background: var(--bianco); }
-    .servizi-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 48px;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .servizi-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-    .servizio-card {
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid #e8ecf4;
-      transition: all .3s;
-      text-decoration: none;
-      display: block;
-      background: var(--bianco);
-    }
-    .servizio-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(26,52,96,0.12); border-color: var(--blu-chiaro); }
-    .servizio-img {
-      height: 180px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      position: relative;
-      overflow: hidden;
-    }
-    .servizio-img.bg1 { background: linear-gradient(135deg, #1a3460 0%, #2558a8 100%); }
-    .servizio-img.bg2 { background: linear-gradient(135deg, #2558a8 0%, #3a7bd5 100%); }
-    .servizio-img.bg3 { background: linear-gradient(135deg, #1a3460 0%, #c8a84b 100%); }
-    .servizio-img.bg4 { background: linear-gradient(135deg, #0d2240 0%, #2558a8 100%); }
-    .servizio-img.bg5 { background: linear-gradient(135deg, #c8a84b 0%, #e8c96b 100%); }
-    .servizio-img.bg6 { background: linear-gradient(135deg, #1a3460 0%, #4a8fdf 100%); }
-    .servizio-img.bg7 { background: linear-gradient(135deg, #2558a8 0%, #1a3460 100%); }
-    .servizio-img.bg8 { background: linear-gradient(135deg, #0d2240 0%, #3a7bd5 100%); }
-    .servizio-img.bg9 { background: linear-gradient(135deg, #1a3460 0%, #c8a84b 100%); }
-    .servizio-body { padding: 22px; }
-    .servizio-body h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--blu); margin-bottom: 8px; }
-    .servizio-body p { font-size: 0.82rem; color: var(--testo-chiaro); line-height: 1.65; }
-    .servizio-link { font-size: 0.78rem; font-weight: 700; color: var(--blu-chiaro); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 12px; display: inline-flex; align-items: center; gap: 4px; }
-
-    /* ── NEWS ── */
-    .news-section { background: var(--grigio-chiaro); }
-    .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 48px; }
-    .news-card {
-      background: var(--bianco);
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid #e8ecf4;
-      transition: .25s;
-    }
-    .news-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-    .news-thumb {
-      height: 140px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2.5rem;
-    }
-    .news-thumb.n1 { background: linear-gradient(135deg, #e8f0fe, #c2d6ff); }
-    .news-thumb.n2 { background: linear-gradient(135deg, #fff8e1, #ffe0a0); }
-    .news-thumb.n3 { background: linear-gradient(135deg, #e8f5e9, #a5d6a7); }
-    .news-body { padding: 20px; }
-    .news-tag {
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--blu-chiaro);
-      background: var(--grigio-chiaro);
-      padding: 3px 10px;
-      border-radius: 10px;
-      display: inline-block;
-      margin-bottom: 10px;
-    }
-    .news-body h3 { font-size: 0.95rem; font-weight: 600; color: var(--blu); line-height: 1.4; margin-bottom: 10px; }
-    .news-body p { font-size: 0.81rem; color: var(--testo-chiaro); line-height: 1.65; margin-bottom: 14px; }
-    .news-body a { font-size: 0.78rem; font-weight: 700; color: var(--blu-chiaro); text-decoration: none; }
-    .news-body a:hover { text-decoration: underline; }
-    .news-footer { text-align: center; margin-top: 40px; }
-
-    /* ── CTA ── */
-    .cta-section {
-      background: linear-gradient(120deg, var(--blu) 0%, #0d2240 100%);
-      padding: 80px 5%;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .cta-section::before {
-      content: '';
-      position: absolute;
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(200,168,75,0.12) 0%, transparent 70%);
-      top: -100px; right: 10%;
-      pointer-events: none;
-    }
-    .cta-section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      color: var(--bianco);
-      margin-bottom: 14px;
-    }
-    .cta-section p { color: rgba(255,255,255,0.7); font-size: 1rem; max-width: 540px; margin: 0 auto 34px; }
-
-    /* ── CONTATTI ── */
-    .contatti-section { background: var(--bianco); }
-    .contatti-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-    .contatti-info h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--blu); margin-bottom: 24px; }
-    .info-item { display: flex; gap: 16px; margin-bottom: 22px; align-items: flex-start; }
-    .info-icon { width: 42px; height: 42px; border-radius: 50%; background: var(--grigio-chiaro); display: flex; align-items: center; justify-content: center; color: var(--blu-chiaro); flex-shrink: 0; font-size: 0.95rem; }
-    .info-item h4 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--testo-chiaro); margin-bottom: 4px; }
-    .info-item p { font-size: 0.92rem; color: var(--testo); }
-    .contatti-form { background: var(--grigio-chiaro); padding: 36px; border-radius: 14px; }
-    .contatti-form h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--blu); margin-bottom: 22px; }
-    .form-group { margin-bottom: 16px; }
-    .form-group label { display: block; font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--testo-chiaro); margin-bottom: 6px; }
-    .form-group input, .form-group textarea, .form-group select {
-      width: 100%; padding: 11px 14px;
-      border: 1.5px solid #dde3f0;
-      border-radius: 8px;
-      font-family: 'Raleway', sans-serif;
-      font-size: 0.88rem;
-      color: var(--testo);
-      background: var(--bianco);
-      transition: .2s;
-    }
-    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-      outline: none; border-color: var(--blu-chiaro);
-      box-shadow: 0 0 0 3px rgba(37,88,168,0.1);
-    }
-    .form-group textarea { resize: vertical; min-height: 110px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .btn-form {
-      width: 100%; background: var(--blu); color: var(--bianco);
-      padding: 14px; border: none; border-radius: 8px; cursor: pointer;
-      font-family: 'Raleway', sans-serif; font-size: 0.9rem; font-weight: 700;
-      letter-spacing: 0.5px; transition: .2s;
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-    }
-    .btn-form:hover { background: var(--blu-chiaro); }
-
-    /* ── FOOTER ── */
-    footer {
-      background: #0d1f40;
-      color: rgba(255,255,255,0.75);
-      padding: 60px 5% 0;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 48px;
-      padding-bottom: 48px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .footer-brand .logo-text .name { color: var(--bianco); }
-    .footer-brand .logo-text .sub { color: rgba(255,255,255,0.5); }
-    .footer-brand p { font-size: 0.84rem; line-height: 1.8; margin-top: 16px; margin-bottom: 22px; }
-    .footer-socials { display: flex; gap: 10px; }
-    .footer-socials a {
-      width: 36px; height: 36px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.2);
-      display: flex; align-items: center; justify-content: center;
-      color: rgba(255,255,255,0.6); font-size: 0.85rem;
-      text-decoration: none; transition: .2s;
-    }
-    .footer-socials a:hover { background: var(--oro); border-color: var(--oro); color: var(--blu); }
-    footer h4 { color: var(--bianco); font-size: 0.82rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 18px; }
-    footer ul { list-style: none; }
-    footer ul li { margin-bottom: 9px; }
-    footer ul li a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.84rem; transition: .2s; }
-    footer ul li a:hover { color: var(--oro); padding-left: 4px; }
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 0;
-      font-size: 0.78rem;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .footer-bottom a { color: rgba(255,255,255,0.5); text-decoration: none; }
-    .footer-bottom a:hover { color: var(--oro); }
-
-    /* ── MAP PLACEHOLDER ── */
-    .map-container {
-      width: 100%; height: 280px;
-      border-radius: 12px;
-      overflow: hidden;
-      background: #dde3f0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid #e8ecf4;
-      position: relative;
-      margin-top: 28px;
-    }
-    .map-placeholder {
-      text-align: center;
-      color: var(--blu);
-    }
-    .map-placeholder i { font-size: 2.5rem; color: var(--oro); margin-bottom: 10px; display: block; }
-    .map-placeholder p { font-size: 0.92rem; font-weight: 600; }
-    .map-placeholder small { font-size: 0.78rem; color: var(--testo-chiaro); }
-
-    /* ── HAMBURGER ── */
-    .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
-    .hamburger span { display: block; width: 24px; height: 2px; background: var(--blu); border-radius: 2px; transition: .3s; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      .servizi-grid { grid-template-columns: repeat(2, 1fr); }
-      .news-grid { grid-template-columns: 1fr 1fr; }
-      .contatti-grid { grid-template-columns: 1fr; }
-      .strip-grid { grid-template-columns: 1fr; }
-      .strip-card { border-right: none; border-bottom: 1px solid #dde3f0; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-      .highlights { grid-template-columns: 1fr; }
-      .highlight-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    }
-    @media (max-width: 650px) {
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .servizi-grid, .news-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .form-row { grid-template-columns: 1fr; }
-      .topbar .info { display: none; }
-    }
-  </style>
+/* RESPONSIVE */
+@media(max-width:900px){
+  .strip{grid-template-columns:1fr;}
+  .strip-box{border-right:none;border-bottom:1px solid #e8e8e8;}
+  .servizi-grid{grid-template-columns:1fr 1fr;}
+  .news-grid{grid-template-columns:1fr 1fr;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:620px){
+  nav ul{display:none;}
+  .hamburger{display:flex;}
+  .servizi-grid,.news-grid{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr;}
+  .modal-body,.modal-head{padding:26px 22px;}
+}
+</style>
 </head>
 <body>
 
-<!-- TOPBAR -->
-<div class="topbar">
-  <div class="info">
-    <i class="fas fa-map-marker-alt"></i> Via dei Marrucini 51, Pescara &nbsp;|&nbsp;
-    <i class="fas fa-phone"></i> +39 085 000 0000 &nbsp;|&nbsp;
-    <i class="fas fa-envelope"></i> info@confispescara.it
-  </div>
-  <div class="socials">
-    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook-f"></i></a>
-  </div>
-</div>
-
-<!-- NAVBAR -->
-<nav>
-  <a href="#" class="logo-area">
-    <div class="logo-icon">
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <path d="M5 35V15l15-10 15 10v20H5z" fill="none" stroke="#c8a84b" stroke-width="2.5"/>
-        <path d="M14 35V24h12v11" fill="none" stroke="#c8a84b" stroke-width="2"/>
-        <circle cx="20" cy="17" r="3" fill="#c8a84b"/>
+<!-- HEADER -->
+<header>
+  <a href="#" class="logo-wrap">
+    <div class="logo-box">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 36V16L20 6l16 10v20H4z" stroke="#c8a84b" stroke-width="2.4" stroke-linejoin="round"/>
+        <path d="M13 36V25h14v11" stroke="#c8a84b" stroke-width="2" stroke-linejoin="round"/>
+        <circle cx="20" cy="18" r="3.5" fill="#c8a84b"/>
       </svg>
     </div>
-    <div class="logo-text">
-      <div class="name">Confis Pescara</div>
+    <div class="logo-txt">
+      <div class="main">Confis Pescara</div>
       <div class="sub">Confederazione Italiana Sviluppo Imprese</div>
     </div>
   </a>
-  <ul class="nav-links">
-    <li><a href="#chi-siamo">Chi siamo</a></li>
-    <li>
-      <a href="#servizi">Servizi ▾</a>
-      <div class="dropdown">
-        <a href="#">Area Lavoro</a>
-        <a href="#">Welfare</a>
-        <a href="#">Formazione</a>
-        <a href="#">Internazionalizzazione</a>
-        <a href="#">Finanza Agevolata</a>
-        <a href="#">Sicurezza sul Lavoro</a>
-        <a href="#">Medicina del Lavoro</a>
-        <a href="#">Innovazione Tecnologica</a>
-        <a href="#">Sostenibilità</a>
-      </div>
-    </li>
-    <li><a href="#news">News</a></li>
-    <li><a href="#contatti">Contatti</a></li>
-    <li><a href="#contatti" class="btn-iscriviti">Iscriviti</a></li>
-  </ul>
-  <div class="hamburger" onclick="this.closest('nav').querySelector('.nav-links').style.display='flex'">
-    <span></span><span></span><span></span>
-  </div>
-</nav>
+  <nav>
+    <ul id="navmenu">
+      <li><a href="#" onclick="openModal('chisiamo');return false;">Chi siamo</a></li>
+      <li>
+        <a href="#servizi">Servizi ▾</a>
+        <div class="sub-menu">
+          <a href="#" onclick="openModal('area-lavoro');return false;">Area Lavoro</a>
+          <a href="#" onclick="openModal('welfare');return false;">Welfare</a>
+          <a href="#" onclick="openModal('formazione');return false;">Formazione</a>
+          <a href="#" onclick="openModal('internazionalizzazione');return false;">Internazionalizzazione</a>
+          <a href="#" onclick="openModal('finanza');return false;">Finanza Agevolata</a>
+          <a href="#" onclick="openModal('sicurezza');return false;">Sicurezza sul Lavoro</a>
+          <a href="#" onclick="openModal('medicina');return false;">Medicina del Lavoro</a>
+          <a href="#" onclick="openModal('innovazione');return false;">Innovazione Tecnologica</a>
+          <a href="#" onclick="openModal('sostenibilita');return false;">Sostenibilità</a>
+        </div>
+      </li>
+      <li><a href="#unioni">Unioni territoriali</a></li>
+      <li><a href="#" onclick="openModal('iscrizione');return false;">Come iscriversi</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contatti">Contatti</a></li>
+      <li><a href="#" class="nav-cta" onclick="openModal('iscrizione');return false;">Iscriviti</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
 
 <!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-content">
-    <div class="hero-eyebrow"><i class="fas fa-star"></i> &nbsp;Unione Territoriale · Pescara</div>
-    <h1>Al fianco delle <span>imprese</span> abruzzesi</h1>
-    <h2>Rappresentiamo e tuteliamo le imprese di Pescara e provincia</h2>
-    <p>
-      Associazione di rappresentanza sindacale dei datori di lavoro, apartitica e senza scopo di lucro.
-      Offriamo assistenza, tutela sindacale, sicurezza sul lavoro, formazione e consulenza contrattuale
-      alle imprese del territorio pescarese.
-    </p>
+<section class="hero">
+  <div class="hero-inner">
+    <h1>CONFEDERAZIONE ITALIANA<br>SVILUPPO IMPRESE</h1>
+    <h2>AL FIANCO DELLE IMPRESE</h2>
+    <p>Rappresentiamo e tuteliamo le imprese di Pescara e provincia nel settore produttivo, commerciale, artigianale e industriale. Al servizio di imprenditori e lavoratori per promuovere uno sviluppo sicuro, sostenibile e in linea con le normative vigenti.</p>
     <div class="hero-btns">
-      <a href="#servizi" class="btn-primary"><i class="fas fa-briefcase"></i> Scopri i Servizi</a>
-      <a href="#contatti" class="btn-secondary">Contattaci</a>
+      <a href="#servizi" class="btn-w"><i class="fas fa-briefcase"></i> Scopri come possiamo aiutarti</a>
+      <a href="#contatti" class="btn-o">Contattaci</a>
     </div>
   </div>
 </section>
 
-<!-- HIGHLIGHTS STRIP -->
-<div class="highlights">
-  <a href="#chi-siamo" class="highlight-item">
-    <div class="highlight-icon"><i class="fas fa-users"></i></div>
-    <div class="highlight-text">
-      <h3>Chi Siamo</h3>
-      <p>Rappresentanza sindacale apartitica</p>
-    </div>
-  </a>
-  <a href="#servizi" class="highlight-item">
-    <div class="highlight-icon"><i class="fas fa-layer-group"></i></div>
-    <div class="highlight-text">
-      <h3>I Nostri Servizi</h3>
-      <p>Assistenza completa alle imprese</p>
-    </div>
-  </a>
-  <a href="#contatti" class="highlight-item">
-    <div class="highlight-icon"><i class="fas fa-file-signature"></i></div>
-    <div class="highlight-text">
-      <h3>Come Iscriversi</h3>
-      <p>Entra nella rete Confis Pescara</p>
-    </div>
-  </a>
-</div>
-
-<!-- CHI SIAMO STRIP -->
-<div class="chi-siamo-strip" id="chi-siamo">
-  <div class="strip-grid">
-    <div class="strip-card">
-      <div class="strip-icon"><i class="fas fa-handshake"></i></div>
-      <h3>Chi Siamo</h3>
-      <p>Associazione di Rappresentanza Sindacale dei Datori di Lavoro, apartitica e senza scopo di lucro, presente a Pescara.</p>
-      <a href="#">Vieni a conoscerci →</a>
-    </div>
-    <div class="strip-card">
-      <div class="strip-icon"><i class="fas fa-cogs"></i></div>
-      <h3>I Servizi</h3>
-      <p>Servizi per promuovere uno sviluppo sicuro, sostenibile e in linea con le normative vigenti per le imprese del territorio.</p>
-      <a href="#servizi">Approfondisci ora →</a>
-    </div>
-    <div class="strip-card">
-      <div class="strip-icon"><i class="fas fa-star"></i></div>
-      <h3>Convenzioni</h3>
-      <p>Gli associati di Confis Pescara hanno accesso a un'ampia gamma di convenzioni esclusive riservate ai soci.</p>
-      <a href="#contatti">Scopri di più →</a>
-    </div>
+<!-- STRIP 3 BOX -->
+<div class="strip">
+  <div class="strip-box" onclick="openModal('chisiamo')">
+    <div class="s-ico"><i class="fas fa-users"></i></div>
+    <h3>Chi Siamo</h3>
+    <p>Associazione di Rappresentanza Sindacale dei Datori di Lavoro, apartitica e senza scopo di lucro.</p>
+    <span class="s-lnk">Vieni a conoscerci</span>
+  </div>
+  <div class="strip-box" onclick="document.getElementById('servizi').scrollIntoView({behavior:'smooth'})">
+    <div class="s-ico"><i class="fas fa-cogs"></i></div>
+    <h3>I Servizi</h3>
+    <p>Servizi per promuovere uno sviluppo sicuro, sostenibile e in linea con le normative vigenti.</p>
+    <span class="s-lnk">Approfondisci ora</span>
+  </div>
+  <div class="strip-box" onclick="openModal('convenzioni')">
+    <div class="s-ico"><i class="fas fa-star"></i></div>
+    <h3>Convenzioni</h3>
+    <p>Gli associati di Confis Pescara hanno la possibilità di accedere a un'ampia gamma di convenzioni esclusive.</p>
+    <span class="s-lnk">Scopri di più</span>
   </div>
 </div>
 
 <!-- SERVIZI -->
-<section class="servizi-section" id="servizi">
-  <div class="servizi-header">
-    <div>
-      <span class="section-label">Cosa offriamo</span>
-      <h2 class="section-title">I nostri servizi,<br>le opportunità per i soci</h2>
-      <p class="section-desc">Offriamo servizi in termini di assistenza ai soci, tutela sindacale, sicurezza sul lavoro ai sensi del d.lgs. 81/08, formazione e consulenza contrattuale.</p>
-    </div>
-  </div>
+<section class="section" id="servizi">
+  <span class="s-eyebrow">I nostri servizi</span>
+  <div class="s-title">I nostri servizi, le opportunità<br>riservate ai nostri soci</div>
+  <p class="s-desc">Offriamo servizi in termini di assistenza ai soci, servizi di tutela sindacale, di sicurezza sul lavoro ai sensi del d.lgs. 81/08, di formazione e di consulenza contrattuale.</p>
   <div class="servizi-grid">
-    <a href="#" class="servizio-card">
-      <div class="servizio-img bg1"><i class="fas fa-heart" style="color:#c8a84b"></i></div>
-      <div class="servizio-body">
-        <h3>Welfare</h3>
-        <p>Soluzioni di welfare aziendale per migliorare il benessere dei dipendenti e ottimizzare la gestione fiscale.</p>
-        <div class="servizio-link">Scopri di più <i class="fas fa-arrow-right"></i></div>
-      </div>
-    </a>
-    <a href="#" class="servizio-card">
-      <div class="servizio-img bg2"><i class="fas fa-shield-alt" style="color:#fff"></i></div>
-      <div class="servizio-body">
-        <h3>Sicurezza sul Lavoro</h3>
-        <p>Consulenza completa sulla sicurezza e salute nei luoghi di lavoro secondo il d.lgs. 81/2008.</p>
-        <div class="servizio-link">Scopri di più <i class="fas fa-arrow-right"></i></div>
-      </div>
-    </a>
-    <a href="#" class="servizio-card">
-      <div class="servizio-img bg3"><i class="fas fa-graduation-cap" style="color:#fff"></i></div>
-      <div class="servizio-body">
-        <h3>Formazione</h3>
-        <p>Corsi e programmi formativi accreditati per la crescita professionale delle risorse umane aziendali.</p>
-        <div class="servizio-link">Scopri di più <i class="fas fa-arrow-right"></i></div>
-      </div>
-    </a>
-    <a href="#" class="servizio-card">
-      <div class="servizio-img bg4"><i class="fas fa-microchip" style="color:#c8a84b"></i></div>
-      <div class="servizio-body">
-        <h3>Innovazione Tecnologica</h3>
-        <p>Supporto nell'adozione di nuove tecnologie e nella trasformazione digitale delle imprese associate.</p>
-        <div class="servizio-link">Scopri di più <i class="fas fa-arrow-right"></i></div>
-      </div>
-    </a>
-    <a href="#" class="servizio-card">
-      <div class="servizio-img bg5"><i class="fas fa-briefcase" style="color:#1a3460"></i></div>
-      <div class="servizio-body">
-        <h3>Area Lavoro</h3>
-        <p>Assistenza nella gestione dei rapporti di lavoro, contrattualistica e relazioni sindacali.</p>
-        <div class="servizio-link">Scopri di più <i class="fas fa-arrow-right"></i></div>
-      </div>
-    </a>
-    <a href="#" class="servizio-card">
-      <div class="servizio-img bg6"><i class="fas fa-globe" style="color:#fff"></i></div>
-      <div class="servizio-body">
-        <h3>Internazionalizzazione</h3>
-        <p>Supporto alle imprese che vogliono espandersi sui mercati internazionali e gestire operazioni estere.</p>
-        <div class="servizio-link">Scopri di più <i class="fas fa-arrow-right"></i></div>
-      </div>
-    </a>
-    <a href="#" class="servizio-card">
-      <div class="servizio-img bg7"><i class="fas fa-stethoscope" style="color:#c8a84b"></i></div>
-      <div class="servizio-body">
-        <h3>Medicina del Lavoro</h3>
-        <p>Sorveglianza sanitaria dei lavoratori e gestione degli adempimenti normativi in materia sanitaria.</p>
-        <div class="servizio-link">Scopri di più <i class="fas fa-arrow-right"></i></div>
-      </div>
-    </a>
-    <a href="#" class="servizio-card">
-      <div class="servizio-img bg8"><i class="fas fa-chart-line" style="color:#c8a84b"></i></div>
-      <div class="servizio-body">
-        <h3>Finanza Agevolata</h3>
-        <p>Accesso a finanziamenti, bandi e contributi pubblici per sostenere gli investimenti aziendali.</p>
-        <div class="servizio-link">Scopri di più <i class="fas fa-arrow-right"></i></div>
-      </div>
-    </a>
-    <a href="#" class="servizio-card">
-      <div class="servizio-img bg9"><i class="fas fa-leaf" style="color:#fff"></i></div>
-      <div class="servizio-body">
-        <h3>Sostenibilità</h3>
-        <p>Percorsi per integrare strategie ESG e pratiche sostenibili nel modello di business aziendale.</p>
-        <div class="servizio-link">Scopri di più <i class="fas fa-arrow-right"></i></div>
-      </div>
-    </a>
+
+    <div class="serv-card" onclick="openModal('welfare')">
+      <div class="serv-bg" style="background:linear-gradient(135deg,#1b3a6b,#2558a8);position:absolute;inset:0;"></div>
+      <div class="serv-icon-bg"><i class="fas fa-heart"></i></div>
+      <div class="serv-overlay"></div>
+      <div class="serv-body"><h3>Welfare</h3><div class="arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
+    </div>
+
+    <div class="serv-card" onclick="openModal('sicurezza')">
+      <div class="serv-bg" style="background:linear-gradient(135deg,#0d2040,#1d4e8f);position:absolute;inset:0;"></div>
+      <div class="serv-icon-bg"><i class="fas fa-shield-alt"></i></div>
+      <div class="serv-overlay"></div>
+      <div class="serv-body"><h3>Sicurezza Sul Lavoro</h3><div class="arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
+    </div>
+
+    <div class="serv-card" onclick="openModal('formazione')">
+      <div class="serv-bg" style="background:linear-gradient(135deg,#1b3a6b,#b89030);position:absolute;inset:0;"></div>
+      <div class="serv-icon-bg"><i class="fas fa-graduation-cap"></i></div>
+      <div class="serv-overlay"></div>
+      <div class="serv-body"><h3>Formazione</h3><div class="arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
+    </div>
+
+    <div class="serv-card" onclick="openModal('innovazione')">
+      <div class="serv-bg" style="background:linear-gradient(135deg,#111e40,#2558a8);position:absolute;inset:0;"></div>
+      <div class="serv-icon-bg"><i class="fas fa-microchip"></i></div>
+      <div class="serv-overlay"></div>
+      <div class="serv-body"><h3>Innovazione Tecnologica</h3><div class="arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
+    </div>
+
+    <div class="serv-card" onclick="openModal('area-lavoro')">
+      <div class="serv-bg" style="background:linear-gradient(135deg,#c8a84b,#e8c870);position:absolute;inset:0;"></div>
+      <div class="serv-icon-bg" style="color:rgba(0,0,0,.12);"><i class="fas fa-briefcase"></i></div>
+      <div class="serv-overlay"></div>
+      <div class="serv-body"><h3>Area Lavoro</h3><div class="arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
+    </div>
+
+    <div class="serv-card" onclick="openModal('internazionalizzazione')">
+      <div class="serv-bg" style="background:linear-gradient(135deg,#1b3a6b,#3a7bd5);position:absolute;inset:0;"></div>
+      <div class="serv-icon-bg"><i class="fas fa-globe"></i></div>
+      <div class="serv-overlay"></div>
+      <div class="serv-body"><h3>Internazionalizzazione</h3><div class="arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
+    </div>
+
+    <div class="serv-card" onclick="openModal('medicina')">
+      <div class="serv-bg" style="background:linear-gradient(135deg,#0d2040,#1d4e8f);position:absolute;inset:0;"></div>
+      <div class="serv-icon-bg"><i class="fas fa-stethoscope"></i></div>
+      <div class="serv-overlay"></div>
+      <div class="serv-body"><h3>Medicina del Lavoro</h3><div class="arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
+    </div>
+
+    <div class="serv-card" onclick="openModal('finanza')">
+      <div class="serv-bg" style="background:linear-gradient(135deg,#1b3a6b,#4a8fe0);position:absolute;inset:0;"></div>
+      <div class="serv-icon-bg"><i class="fas fa-chart-line"></i></div>
+      <div class="serv-overlay"></div>
+      <div class="serv-body"><h3>Finanza Agevolata</h3><div class="arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
+    </div>
+
+    <div class="serv-card" onclick="openModal('sostenibilita')">
+      <div class="serv-bg" style="background:linear-gradient(135deg,#1b3a6b,#2e8b5a);position:absolute;inset:0;"></div>
+      <div class="serv-icon-bg"><i class="fas fa-leaf"></i></div>
+      <div class="serv-overlay"></div>
+      <div class="serv-body"><h3>Sostenibilità</h3><div class="arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
+    </div>
+
   </div>
 </section>
 
 <!-- NEWS -->
-<section class="news-section" id="news">
-  <span class="section-label">Resta informato</span>
-  <h2 class="section-title">Ultime notizie e aggiornamenti</h2>
-  <p class="section-desc">Ricevi tutti gli aggiornamenti e scopri le novità tramite il nostro blog e le ultime news dal territorio.</p>
+<section class="section bg-grey" id="news">
+  <span class="s-eyebrow">Resta informato</span>
+  <div class="s-title">Ricevi tutti gli aggiornamenti e scopri<br>le novità tramite il nostro blog</div>
   <div class="news-grid">
-    <div class="news-card">
-      <div class="news-thumb n1"><i class="fas fa-running"></i></div>
+    <div class="news-card" onclick="openModal('news1')">
+      <div class="news-thumb-ph n1"><i class="fas fa-running"></i></div>
       <div class="news-body">
-        <span class="news-tag">News</span>
+        <span class="news-tag">NEWS</span>
         <h3>Composizione Enti di Promozione Sportiva: chiarimenti e approfondimenti</h3>
-        <p>Aggiornamenti normativi sulla composizione degli enti di promozione sportiva e le implicazioni per le imprese associate.</p>
-        <a href="#">Leggi di più »</a>
+        <a href="#" onclick="openModal('news1');return false;">Leggi di più »</a>
       </div>
     </div>
-    <div class="news-card">
-      <div class="news-thumb n2"><i class="fas fa-car"></i></div>
+    <div class="news-card" onclick="openModal('news2')">
+      <div class="news-thumb-ph n2"><i class="fas fa-car"></i></div>
       <div class="news-body">
-        <span class="news-tag">News</span>
-        <h3>Noleggio a lungo termine: le opportunità per i soci Confis Pescara</h3>
-        <p>Scopri le convenzioni esclusive riservate agli associati per il noleggio a lungo termine di veicoli aziendali.</p>
-        <a href="#">Leggi di più »</a>
+        <span class="news-tag">NEWS</span>
+        <h3>Noleggio a lungo termine: le opportunità targate Confis Pescara</h3>
+        <a href="#" onclick="openModal('news2');return false;">Leggi di più »</a>
       </div>
     </div>
-    <div class="news-card">
-      <div class="news-thumb n3"><i class="fas fa-chart-bar"></i></div>
+    <div class="news-card" onclick="openModal('news3')">
+      <div class="news-thumb-ph n3"><i class="fas fa-chart-bar"></i></div>
       <div class="news-body">
-        <span class="news-tag">Evento</span>
-        <h3>"Come ridurre i costi aziendali": webinar gratuito per gli associati</h3>
-        <p>Partecipa al webinar gratuito dedicato alle strategie più efficaci per ottimizzare i costi della tua impresa.</p>
-        <a href="#">Leggi di più »</a>
+        <span class="news-tag">NEWS</span>
+        <h3>"Come ridurre i costi aziendali": il webinar gratuito</h3>
+        <a href="#" onclick="openModal('news3');return false;">Leggi di più »</a>
       </div>
     </div>
   </div>
-  <div class="news-footer">
-    <a href="#" class="btn-primary" style="display:inline-flex"><i class="fas fa-newspaper"></i> Vedi tutti gli articoli</a>
+  <div class="news-cta">
+    <a href="#" class="btn-w" style="background:var(--blu);color:#fff;">Vedi più articoli</a>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section">
-  <span class="section-label" style="color:var(--oro)">Unisciti a noi</span>
+<!-- UNIONI -->
+<section class="section" id="unioni" style="padding:60px 5%;">
+  <div style="text-align:center;">
+    <span class="s-eyebrow">Territorio</span>
+    <div class="s-title" style="text-align:center;">Unioni territoriali</div>
+    <p class="s-desc" style="margin:0 auto 36px;text-align:center;">Confis Pescara fa parte della rete nazionale Confisi, con sedi e unioni territoriali presenti in tutta Italia.</p>
+    <div style="display:flex;justify-content:center;gap:18px;flex-wrap:wrap;">
+      <div style="background:var(--grigio);border-radius:10px;padding:22px 30px;min-width:155px;cursor:pointer;" onclick="openModal('chisiamo')">
+        <div style="font-size:1.8rem;color:var(--blu2);margin-bottom:8px;"><i class="fas fa-map-marker-alt"></i></div>
+        <div style="font-weight:700;font-size:.86rem;color:var(--blu);">Pescara</div>
+        <div style="font-size:.72rem;color:var(--testo2);margin-top:3px;">Sede Principale</div>
+      </div>
+      <div style="background:var(--grigio);border-radius:10px;padding:22px 30px;min-width:155px;opacity:.5;">
+        <div style="font-size:1.8rem;color:var(--blu2);margin-bottom:8px;"><i class="fas fa-map-marker-alt"></i></div>
+        <div style="font-weight:700;font-size:.86rem;color:var(--blu);">Chieti</div>
+        <div style="font-size:.72rem;color:var(--testo2);margin-top:3px;">In arrivo</div>
+      </div>
+      <div style="background:var(--grigio);border-radius:10px;padding:22px 30px;min-width:155px;opacity:.5;">
+        <div style="font-size:1.8rem;color:var(--blu2);margin-bottom:8px;"><i class="fas fa-map-marker-alt"></i></div>
+        <div style="font-weight:700;font-size:.86rem;color:var(--blu);">L'Aquila</div>
+        <div style="font-size:.72rem;color:var(--testo2);margin-top:3px;">In arrivo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <span class="eyebrow">CONFEDERAZIONE ITALIANA SVILUPPO IMPRESE</span>
   <h2>Vuoi aderire a Confis Pescara?</h2>
-  <p>Entra a far parte della rete e accedi a tutti i servizi riservati ai nostri associati.</p>
-  <a href="#contatti" class="btn-primary"><i class="fas fa-file-signature"></i> Iscriviti a Confis Pescara</a>
-</section>
+  <p>Entra nella nostra rete e accedi a tutti i servizi e le convenzioni riservate agli associati.</p>
+  <a href="#" class="btn-w" onclick="openModal('iscrizione');return false;"><i class="fas fa-file-signature"></i> Iscriviti a Confis Pescara</a>
+</div>
 
-<!-- CONTATTI -->
-<section class="contatti-section" id="contatti">
-  <span class="section-label">Dove siamo</span>
-  <h2 class="section-title" style="margin-bottom:48px">Contattaci</h2>
-  <div class="contatti-grid">
-    <div class="contatti-info">
-      <h3>Confis Pescara</h3>
-      <div class="info-item">
-        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
-        <div>
-          <h4>Indirizzo</h4>
-          <p>Via dei Marrucini 51<br>65100 Pescara (PE)</p>
-        </div>
-      </div>
-      <div class="info-item">
-        <div class="info-icon"><i class="fas fa-phone"></i></div>
-        <div>
-          <h4>Telefono</h4>
-          <p>+39 085 000 0000</p>
-        </div>
-      </div>
-      <div class="info-item">
-        <div class="info-icon"><i class="fas fa-envelope"></i></div>
-        <div>
-          <h4>Email</h4>
-          <p>info@confispescara.it</p>
-        </div>
-      </div>
-      <div class="info-item">
-        <div class="info-icon"><i class="fas fa-clock"></i></div>
-        <div>
-          <h4>Orari di apertura</h4>
-          <p>Lun – Ven: 09:00 – 13:00 / 15:00 – 18:00<br>Sab: 09:00 – 12:00</p>
-        </div>
-      </div>
-      <div class="map-container">
-        <div class="map-placeholder">
-          <i class="fas fa-map-marked-alt"></i>
-          <p>Via dei Marrucini 51, Pescara</p>
-          <small>Clicca per aprire in Google Maps</small>
-        </div>
-      </div>
-    </div>
-    <div class="contatti-form">
-      <h3>Inviaci un messaggio</h3>
-      <div class="form-row">
-        <div class="form-group">
-          <label>Nome *</label>
-          <input type="text" placeholder="Il tuo nome"/>
-        </div>
-        <div class="form-group">
-          <label>Cognome *</label>
-          <input type="text" placeholder="Il tuo cognome"/>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Email *</label>
-        <input type="email" placeholder="la-tua@email.it"/>
-      </div>
-      <div class="form-group">
-        <label>Telefono</label>
-        <input type="tel" placeholder="+39 ..."/>
-      </div>
-      <div class="form-group">
-        <label>Servizio di interesse</label>
-        <select>
-          <option>Seleziona un servizio...</option>
-          <option>Area Lavoro</option>
-          <option>Welfare</option>
-          <option>Formazione</option>
-          <option>Internazionalizzazione</option>
-          <option>Finanza Agevolata</option>
-          <option>Sicurezza sul Lavoro</option>
-          <option>Medicina del Lavoro</option>
-          <option>Innovazione Tecnologica</option>
-          <option>Sostenibilità</option>
-          <option>Iscrizione</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Messaggio *</label>
-        <textarea placeholder="Scrivi il tuo messaggio..."></textarea>
-      </div>
-      <button class="btn-form"><i class="fas fa-paper-plane"></i> Invia messaggio</button>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="logo-area" style="display:flex;gap:12px;align-items:center;margin-bottom:0">
-        <div class="logo-icon" style="width:44px;height:44px">
-          <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" style="width:26px;height:26px">
-            <path d="M5 35V15l15-10 15 10v20H5z" fill="none" stroke="#c8a84b" stroke-width="2.5"/>
-            <path d="M14 35V24h12v11" fill="none" stroke="#c8a84b" stroke-width="2"/>
-            <circle cx="20" cy="17" r="3" fill="#c8a84b"/>
+<!-- FOOTER / CONTATTI -->
+<footer id="contatti">
+  <div class="footer-top">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:2px;">
+        <div class="logo-box" style="width:42px;height:42px;">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:26px;height:26px;">
+            <path d="M4 36V16L20 6l16 10v20H4z" stroke="#c8a84b" stroke-width="2.4" stroke-linejoin="round"/>
+            <path d="M13 36V25h14v11" stroke="#c8a84b" stroke-width="2" stroke-linejoin="round"/>
+            <circle cx="20" cy="18" r="3.5" fill="#c8a84b"/>
           </svg>
         </div>
-        <div class="logo-text">
-          <div class="name" style="font-size:1.1rem">Confis Pescara</div>
-          <div class="sub">Confederazione Italiana Sviluppo Imprese</div>
+        <div>
+          <div class="f-logo-main">Confis Pescara</div>
+          <div class="f-logo-sub">Confederazione Italiana Sviluppo Imprese</div>
         </div>
       </div>
-      <p style="margin-top:16px">Associazione di Rappresentanza Sindacale dei Datori di Lavoro. Al servizio delle imprese di Pescara e provincia per uno sviluppo sicuro e sostenibile.</p>
-      <div class="footer-socials">
+      <p class="footer-about">Associazione di Rappresentanza Sindacale dei Datori di Lavoro, apartitica e senza scopo di lucro. Al fianco delle imprese di Pescara e provincia.</p>
+      <h4 style="margin-bottom:12px;">Seguici sulle reti</h4>
+      <div class="f-socials">
         <a href="#"><i class="fab fa-linkedin-in"></i></a>
         <a href="#"><i class="fab fa-instagram"></i></a>
         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -932,41 +410,344 @@
     <div>
       <h4>Navigazione</h4>
       <ul>
-        <li><a href="#chi-siamo">Chi Siamo</a></li>
+        <li><a href="#" onclick="openModal('chisiamo');return false;">Chi Siamo</a></li>
         <li><a href="#servizi">Servizi</a></li>
+        <li><a href="#unioni">Unioni Territoriali</a></li>
+        <li><a href="#" onclick="openModal('iscrizione');return false;">Come Iscriversi</a></li>
         <li><a href="#news">News</a></li>
         <li><a href="#contatti">Contatti</a></li>
-        <li><a href="#contatti">Come Iscriversi</a></li>
       </ul>
     </div>
     <div>
       <h4>Servizi</h4>
       <ul>
-        <li><a href="#">Area Lavoro</a></li>
-        <li><a href="#">Welfare</a></li>
-        <li><a href="#">Formazione</a></li>
-        <li><a href="#">Finanza Agevolata</a></li>
-        <li><a href="#">Sicurezza sul Lavoro</a></li>
-        <li><a href="#">Sostenibilità</a></li>
+        <li><a href="#" onclick="openModal('area-lavoro');return false;">Area Lavoro</a></li>
+        <li><a href="#" onclick="openModal('welfare');return false;">Welfare</a></li>
+        <li><a href="#" onclick="openModal('formazione');return false;">Formazione</a></li>
+        <li><a href="#" onclick="openModal('internazionalizzazione');return false;">Internazionalizzazione</a></li>
+        <li><a href="#" onclick="openModal('finanza');return false;">Finanza Agevolata</a></li>
+        <li><a href="#" onclick="openModal('sicurezza');return false;">Sicurezza sul Lavoro</a></li>
+        <li><a href="#" onclick="openModal('medicina');return false;">Medicina del Lavoro</a></li>
+        <li><a href="#" onclick="openModal('innovazione');return false;">Innovazione Tecnologica</a></li>
+        <li><a href="#" onclick="openModal('sostenibilita');return false;">Sostenibilità</a></li>
       </ul>
     </div>
     <div>
       <h4>Contatti</h4>
       <ul>
-        <li><a href="#"><i class="fas fa-map-marker-alt" style="width:14px"></i> Via dei Marrucini 51, Pescara</a></li>
-        <li><a href="tel:+390850000000"><i class="fas fa-phone" style="width:14px"></i> +39 085 000 0000</a></li>
-        <li><a href="mailto:info@confispescara.it"><i class="fas fa-envelope" style="width:14px"></i> info@confispescara.it</a></li>
+        <li><a href="#"><i class="fas fa-map-marker-alt" style="width:14px;margin-right:4px;"></i> Via dei Marrucini 51, Pescara</a></li>
+        <li><a href="tel:+390850000000"><i class="fas fa-phone" style="width:14px;margin-right:4px;"></i> +39 085 000 0000</a></li>
+        <li><a href="mailto:info@confispescara.it"><i class="fas fa-envelope" style="width:14px;margin-right:4px;"></i> info@confispescara.it</a></li>
+        <li><a href="#"><i class="fas fa-clock" style="width:14px;margin-right:4px;"></i> Lun–Ven 9:00–18:00</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>Copyright © 2025, Confis Pescara. Tutti i diritti riservati.</span>
-    <div style="display:flex;gap:20px">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Cookie Policy</a>
-    </div>
+    <span>Copyright ©2025, Confis Pescara</span>
+    <div><a href="#">Privacy &amp; Cookie Policy</a></div>
   </div>
 </footer>
 
+<!-- MODAL OVERLAY -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal" id="modal-box">
+    <button class="modal-close" onclick="closeModalDirect()"><i class="fas fa-times"></i></button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<script>
+const M = {
+  'chisiamo':{ico:'fas fa-users',title:'Chi Siamo',sub:'Confederazione Italiana Sviluppo Imprese – Confis Pescara',body:`
+    <p>Confis Pescara è un'<strong>Associazione di Rappresentanza Sindacale dei Datori di Lavoro</strong>, apartitica e senza scopo di lucro, parte del sistema nazionale Confisi.</p>
+    <p>Si articola in Unioni Territoriali e Federazioni regionali che, insieme, costituiscono il sistema di rappresentanza generale e unitario delle imprese orientate alla produzione, organizzazione ed erogazione di beni e/o servizi con organizzazione commerciale, artigianale, agricola e industriale.</p>
+    <h3>La nostra missione</h3>
+    <p>Rappresentare e tutelare le imprese del territorio pescarese, promuovendo uno sviluppo sicuro, sostenibile e in linea con le normative vigenti. Siamo al servizio di imprenditori e lavoratori ogni giorno.</p>
+    <h3>E.LAV. – Ente Bilaterale di riferimento</h3>
+    <p>L'Ente Bilaterale di riferimento del sistema Confisi offre agli associati servizi specializzati:</p>
+    <ul>
+      <li>Sicurezza e Salute nei luoghi di lavoro</li>
+      <li>Formazione, informazione e certificazione attestati</li>
+      <li>Redazione DVR, nomina RSPP e RLST</li>
+      <li>Sorveglianza Sanitaria</li>
+      <li>Assistenza contrattuale e conciliazione sindacale</li>
+      <li>Welfare aziendale e certificazione contratti</li>
+    </ul>
+    <h3>Dove siamo</h3>
+    <p><i class="fas fa-map-marker-alt" style="color:var(--blu2);margin-right:6px;"></i> Via dei Marrucini 51, 65100 Pescara (PE)</p>
+  `,btn1:'Contattaci',btn1a:'#contatti',btn2:'Iscriviti',btn2id:'iscrizione'},
+
+  'convenzioni':{ico:'fas fa-star',title:'Convenzioni Esclusive',sub:'Vantaggi riservati ai soci Confis Pescara',body:`
+    <p>Gli associati di Confis Pescara hanno la possibilità di accedere a un'ampia gamma di <strong>convenzioni esclusive</strong>, frutto di accordi con partner selezionati a livello locale e nazionale.</p>
+    <h3>Tipologie di convenzioni</h3>
+    <ul>
+      <li><strong>Noleggio a lungo termine:</strong> tariffe agevolate per veicoli aziendali</li>
+      <li><strong>Assicurazioni:</strong> polizze personalizzate a condizioni di favore</li>
+      <li><strong>Servizi bancari:</strong> condizioni preferenziali con istituti partner</li>
+      <li><strong>Formazione:</strong> accesso a corsi a prezzi ridotti o gratuiti</li>
+      <li><strong>Salute e benessere:</strong> convenzioni con strutture sanitarie del territorio</li>
+      <li><strong>Tecnologia:</strong> software e soluzioni digitali a tariffe agevolate</li>
+      <li><strong>Consulenza legale e fiscale:</strong> prime consulenze agevolate</li>
+    </ul>
+    <h3>Come accedere</h3>
+    <p>Le convenzioni sono accessibili a tutti i soci in regola con la quota associativa. Contatta la sede per il catalogo aggiornato delle convenzioni attive.</p>
+  `,btn1:'Scopri tutte le convenzioni',btn1a:'#contatti',btn2:'Iscriviti ora',btn2id:'iscrizione'},
+
+  'welfare':{ico:'fas fa-heart',title:'Welfare',sub:'Soluzioni di welfare aziendale per le imprese associate',body:`
+    <p>Il welfare aziendale consente alle imprese di <strong>aumentare il potere d'acquisto dei dipendenti</strong> riducendo il costo del lavoro grazie a significativi vantaggi fiscali previsti dalla normativa italiana.</p>
+    <h3>I nostri servizi di Welfare</h3>
+    <ul>
+      <li>Pianificazione e implementazione di piani welfare su misura</li>
+      <li>Gestione piattaforme welfare digitali</li>
+      <li>Buoni pasto e ticket restaurant</li>
+      <li>Assistenza sanitaria integrativa per i dipendenti</li>
+      <li>Rimborso spese scolastiche e universitarie</li>
+      <li>Contributi per abbonamenti al trasporto pubblico</li>
+      <li>Fondo pensione complementare</li>
+      <li>Assistenza alla famiglia (baby sitting, badanti)</li>
+    </ul>
+    <h3>Vantaggi fiscali</h3>
+    <p>I benefit welfare sono <strong>esenti da contributi INPS e IRPEF</strong> entro i limiti di legge, permettendo un risparmio concreto sia per l'azienda che per il dipendente.</p>
+    <h3>A chi è rivolto</h3>
+    <p>A tutte le imprese associate, indipendentemente dalla dimensione, che vogliono valorizzare i propri collaboratori migliorando il clima aziendale.</p>
+  `,btn1:'Richiedi una consulenza',btn1a:'#contatti',btn2:'Iscriviti',btn2id:'iscrizione'},
+
+  'sicurezza':{ico:'fas fa-shield-alt',title:'Sicurezza sul Lavoro',sub:'Consulenza e adempimenti ai sensi del D.Lgs. 81/08',body:`
+    <p>La sicurezza sul lavoro è un obbligo di legge e un valore fondamentale. Confis Pescara offre un servizio completo per garantire la <strong>conformità al D.Lgs. 81/2008</strong> e proteggere lavoratori e imprese da rischi e sanzioni.</p>
+    <h3>Servizi offerti</h3>
+    <ul>
+      <li><strong>Redazione DVR</strong> – Documento di Valutazione dei Rischi</li>
+      <li><strong>Nomina RSPP</strong> – Responsabile Servizio Prevenzione e Protezione</li>
+      <li><strong>Nomina RLST</strong> – Rappresentante dei Lavoratori per la Sicurezza</li>
+      <li>Formazione e informazione obbligatoria per lavoratori e dirigenti</li>
+      <li>Certificazione attestati di formazione</li>
+      <li>Gestione sorveglianza sanitaria</li>
+      <li>Certificazione ISO 45001 (con sgravio costi INAIL)</li>
+      <li>Assistenza per la <strong>Patente a Punti</strong> nei cantieri</li>
+      <li>Aggiornamento normativo e consulenza continua</li>
+    </ul>
+    <h3>Perché affidarsi a noi</h3>
+    <p>Il nostro team di esperti garantisce un supporto completo dalla valutazione iniziale all'implementazione delle misure di sicurezza, assicurando la massima conformità normativa e riducendo il rischio di sanzioni ispettive.</p>
+  `,btn1:'Richiedi una consulenza',btn1a:'#contatti',btn2:'Iscriviti',btn2id:'iscrizione'},
+
+  'formazione':{ico:'fas fa-graduation-cap',title:'Formazione',sub:'Corsi e programmi formativi accreditati per imprese e lavoratori',body:`
+    <p>La formazione continua è essenziale per la crescita professionale e la competitività aziendale. Confis Pescara organizza e gestisce <strong>corsi accreditati</strong> in diversi ambiti.</p>
+    <h3>Aree di formazione</h3>
+    <ul>
+      <li><strong>Formazione obbligatoria:</strong> sicurezza sul lavoro, privacy, antincendio, primo soccorso</li>
+      <li><strong>Formazione professionale:</strong> aggiornamento competenze tecniche e trasversali</li>
+      <li><strong>Formazione manageriale:</strong> leadership, gestione del personale, comunicazione</li>
+      <li><strong>Formazione finanziata:</strong> accesso a fondi interprofessionali (Fondimpresa, ecc.)</li>
+      <li><strong>Conformità apprendistato:</strong> gestione percorsi formativi per giovani</li>
+      <li><strong>E-learning:</strong> piattaforme digitali per la formazione a distanza</li>
+    </ul>
+    <h3>Formazione finanziata – costo zero</h3>
+    <p>Molti corsi possono essere realizzati a <strong>costo zero</strong> per le imprese attraverso i fondi interprofessionali. Ti aiutiamo a presentare il piano formativo e accedere ai finanziamenti disponibili.</p>
+  `,btn1:'Vedi il calendario corsi',btn1a:'#contatti',btn2:'Iscriviti',btn2id:'iscrizione'},
+
+  'internazionalizzazione':{ico:'fas fa-globe',title:'Internazionalizzazione',sub:'Supporto alle imprese che si affacciano sui mercati esteri',body:`
+    <p>Espandersi all'estero è un'opportunità straordinaria per le PMI italiane. Confis Pescara offre <strong>supporto completo per l'internazionalizzazione</strong> delle imprese associate.</p>
+    <h3>I nostri servizi</h3>
+    <ul>
+      <li>Analisi dei mercati esteri e identificazione delle opportunità</li>
+      <li>Supporto nella gestione contrattuale internazionale</li>
+      <li>Assistenza per l'apertura di sedi o filiali estere</li>
+      <li>Accesso a programmi europei (COSME, Horizon, ecc.)</li>
+      <li>Partecipazione a fiere e missioni commerciali internazionali</li>
+      <li>Consulenza su normative doganali e import/export</li>
+      <li>Networking con partner internazionali</li>
+    </ul>
+    <h3>Strumenti finanziari disponibili</h3>
+    <p>Esistono numerosi incentivi agevolati per supportare l'internazionalizzazione delle PMI, tra cui i fondi SIMEST e i programmi PNRR. Ti aiutiamo a individuare quelli più adatti alla tua realtà.</p>
+  `,btn1:'Richiedi informazioni',btn1a:'#contatti',btn2:'Iscriviti',btn2id:'iscrizione'},
+
+  'finanza':{ico:'fas fa-chart-line',title:'Finanza Agevolata',sub:'Accesso a finanziamenti, bandi e contributi pubblici',body:`
+    <p>La finanza agevolata permette alle imprese di accedere a <strong>risorse finanziarie a condizioni vantaggiose</strong> per sostenere investimenti, innovazione e crescita.</p>
+    <h3>Tipologie di agevolazioni</h3>
+    <ul>
+      <li><strong>Bandi regionali e nazionali:</strong> monitoraggio continuo delle opportunità</li>
+      <li><strong>Fondi europei:</strong> FESR, FSE, PNRR e altri programmi comunitari</li>
+      <li><strong>Credito d'imposta:</strong> R&amp;S, formazione 4.0, investimenti beni strumentali</li>
+      <li><strong>Garanzie pubbliche:</strong> Fondo Centrale di Garanzia e SACE</li>
+      <li><strong>Contributi a fondo perduto:</strong> per startup, PMI innovative, nuovi investimenti</li>
+      <li><strong>Finanza per l'internazionalizzazione:</strong> SIMEST e altri strumenti</li>
+    </ul>
+    <h3>Come lavoriamo</h3>
+    <p>Analizziamo il profilo della tua azienda, identifichiamo le agevolazioni più adatte e gestiamo l'intero iter burocratico: dalla presentazione della domanda al rendiconto finale.</p>
+  `,btn1:'Analisi gratuita',btn1a:'#contatti',btn2:'Iscriviti',btn2id:'iscrizione'},
+
+  'medicina':{ico:'fas fa-stethoscope',title:'Medicina del Lavoro',sub:'Sorveglianza sanitaria e adempimenti normativi',body:`
+    <p>La sorveglianza sanitaria è un obbligo previsto dal D.Lgs. 81/2008. Confis Pescara gestisce in modo completo tutti gli adempimenti di <strong>medicina del lavoro</strong> per le imprese associate.</p>
+    <h3>Servizi di Medicina del Lavoro</h3>
+    <ul>
+      <li><strong>Nomina del Medico Competente</strong> aziendale</li>
+      <li>Visite mediche preventive, periodiche e di idoneità alla mansione</li>
+      <li>Redazione del protocollo di sorveglianza sanitaria</li>
+      <li>Gestione cartelle sanitarie e di rischio</li>
+      <li>Visite al rientro da malattie prolungate</li>
+      <li>Consulenza per lavoratori con limitazioni e inidoneità parziali</li>
+      <li>Accertamenti biologici e strumentali</li>
+      <li>Informazione ai lavoratori sui rischi per la salute</li>
+    </ul>
+    <h3>Convenzioni con strutture sanitarie</h3>
+    <p>Grazie alle nostre convenzioni con strutture sanitarie del territorio pescarese, garantiamo tempi rapidi e costi contenuti per tutti gli accertamenti necessari.</p>
+  `,btn1:'Prenota una visita',btn1a:'#contatti',btn2:'Iscriviti',btn2id:'iscrizione'},
+
+  'innovazione':{ico:'fas fa-microchip',title:'Innovazione Tecnologica',sub:'Supporto alla trasformazione digitale delle imprese',body:`
+    <p>La trasformazione digitale non è più un'opzione, ma una necessità competitiva. Confis Pescara supporta le imprese associate nel percorso di <strong>digitalizzazione e innovazione</strong>.</p>
+    <h3>Aree di intervento</h3>
+    <ul>
+      <li><strong>Transizione 4.0:</strong> Industria 4.0, IoT, automazione industriale</li>
+      <li><strong>Digitalizzazione processi:</strong> ERP, CRM, gestionale aziendale</li>
+      <li><strong>E-commerce e presenza digitale:</strong> siti web, marketplace, social media</li>
+      <li><strong>Cybersecurity:</strong> protezione dati e conformità GDPR</li>
+      <li><strong>Cloud computing:</strong> migrazione e gestione infrastrutture cloud</li>
+      <li><strong>Intelligenza Artificiale:</strong> applicazioni pratiche per le PMI</li>
+      <li>Accesso agli incentivi Transizione 4.0 e Credito d'Imposta R&amp;S</li>
+    </ul>
+    <h3>Diagnosi digitale gratuita</h3>
+    <p>Partiamo da una <strong>diagnosi digitale gratuita</strong> per identificare le aree di miglioramento e costruiamo insieme un piano di innovazione sostenibile per la tua impresa.</p>
+  `,btn1:'Diagnosi digitale gratuita',btn1a:'#contatti',btn2:'Iscriviti',btn2id:'iscrizione'},
+
+  'sostenibilita':{ico:'fas fa-leaf',title:'Sostenibilità',sub:'Strategie ESG e pratiche sostenibili per le imprese',body:`
+    <p>La sostenibilità è diventata un fattore strategico: clienti, investitori e normative richiedono un impegno concreto su temi ambientali, sociali e di governance (<strong>ESG</strong>).</p>
+    <h3>I nostri servizi di sostenibilità</h3>
+    <ul>
+      <li>Analisi della carbon footprint aziendale</li>
+      <li>Redazione del Bilancio di Sostenibilità (ESG Report)</li>
+      <li>Certificazioni ambientali (ISO 14001, SA8000, ecc.)</li>
+      <li>Consulenza per l'economia circolare</li>
+      <li>Efficienza energetica e energie rinnovabili</li>
+      <li>Accesso a bandi e incentivi green</li>
+      <li>Compliance alla normativa CSRD europea</li>
+    </ul>
+    <h3>Perché investire nella sostenibilità</h3>
+    <p>Un'impresa sostenibile riduce i costi operativi, migliora la reputazione, accede a nuovi mercati e si prepara alle future normative europee sempre più stringenti in materia ambientale e sociale.</p>
+  `,btn1:'Richiedi una consulenza ESG',btn1a:'#contatti',btn2:'Iscriviti',btn2id:'iscrizione'},
+
+  'area-lavoro':{ico:'fas fa-briefcase',title:'Area Lavoro',sub:'Assistenza completa nella gestione dei rapporti di lavoro',body:`
+    <p>L'area lavoro di Confis Pescara fornisce <strong>assistenza e consulenza completa</strong> nella gestione dei rapporti di lavoro, dalla contrattualistica alla risoluzione delle controversie sindacali.</p>
+    <h3>Servizi inclusi</h3>
+    <ul>
+      <li><strong>Assistenza contrattuale:</strong> redazione e revisione di contratti di lavoro</li>
+      <li><strong>Conciliazione sindacale:</strong> gestione delle vertenze tra datori e lavoratori</li>
+      <li><strong>Certificazione contratti:</strong> presso le commissioni di certificazione</li>
+      <li>Consulenza su Contratti Collettivi Nazionali di Lavoro (CCNL)</li>
+      <li>Gestione licenziamenti, dimissioni e procedure sindacali</li>
+      <li>Assistenza in caso di controlli ispettivi (ITL, INPS, INAIL)</li>
+      <li>Conformità apprendistato e contratti di stage</li>
+      <li>Gestione contratti atipici: tempo determinato, part-time, somministrazione</li>
+    </ul>
+    <h3>Tutela sindacale</h3>
+    <p>Rappresentiamo i datori di lavoro nei tavoli sindacali e nelle trattative con le organizzazioni dei lavoratori, garantendo un supporto professionale e competente in ogni fase.</p>
+  `,btn1:'Richiedi assistenza',btn1a:'#contatti',btn2:'Iscriviti',btn2id:'iscrizione'},
+
+  'iscrizione':{ico:'fas fa-file-signature',title:'Come Iscriversi',sub:'Entra nella rete Confis Pescara',body:`
+    <p>Aderire a Confis Pescara è semplice e immediato. In pochi passi avrai accesso a tutti i servizi e le convenzioni riservate agli associati.</p>
+    <h3>Il percorso di adesione</h3>
+    <ul>
+      <li><strong>1. Contattaci</strong> – Chiamaci o scrivi per fissare un primo incontro gratuito</li>
+      <li><strong>2. Analisi delle esigenze</strong> – Un nostro consulente analizzerà le necessità della tua impresa</li>
+      <li><strong>3. Proposta personalizzata</strong> – Ti presenteremo il piano di servizi più adatto</li>
+      <li><strong>4. Adesione</strong> – Firma del contratto associativo e pagamento della quota</li>
+      <li><strong>5. Accesso immediato</strong> – Da subito accesso a tutti i servizi e convenzioni</li>
+    </ul>
+    <h3>Quota associativa</h3>
+    <p>La quota è proporzionata alla dimensione dell'impresa ed è <strong>fiscalmente deducibile</strong>. Contattaci per ricevere un preventivo personalizzato senza impegno.</p>
+    <h3>Cosa ottieni iscrivendoti</h3>
+    <ul>
+      <li>Accesso a tutti i 9 servizi specializzati</li>
+      <li>Convenzioni esclusive con partner selezionati</li>
+      <li>Aggiornamenti normativi e newsletter periodica</li>
+      <li>Partecipazione gratuita a webinar ed eventi</li>
+      <li>Consulente dedicato per la tua impresa</li>
+    </ul>
+    <h3>Contatti</h3>
+    <p><i class="fas fa-map-marker-alt" style="color:var(--blu2);margin-right:5px;"></i> Via dei Marrucini 51, Pescara<br>
+    <i class="fas fa-phone" style="color:var(--blu2);margin-right:5px;"></i> +39 085 000 0000<br>
+    <i class="fas fa-envelope" style="color:var(--blu2);margin-right:5px;"></i> info@confispescara.it</p>
+  `,btn1:'Contattaci ora',btn1a:'#contatti',btn2:null},
+
+  'news1':{ico:'fas fa-running',title:'Composizione Enti di Promozione Sportiva',sub:'Chiarimenti e approfondimenti normativi',body:`
+    <p>La normativa relativa alla composizione degli Enti di Promozione Sportiva ha subito importanti aggiornamenti con il D.Lgs. 36/2021 (Riforma dello Sport).</p>
+    <h3>Principali novità</h3>
+    <p>Le associazioni sportive dilettantistiche e gli enti di promozione sportiva hanno nuovi obblighi in tema di governance, trasparenza e composizione degli organi direttivi.</p>
+    <h3>Impatti per le imprese</h3>
+    <ul>
+      <li>Obbligo di adeguamento degli statuti entro i termini previsti</li>
+      <li>Nuove norme sui rapporti di lavoro sportivo</li>
+      <li>Adempimenti INPS specifici per collaboratori sportivi</li>
+      <li>Esonero contributivo per compensi entro determinate soglie annuali</li>
+    </ul>
+    <h3>Come possiamo aiutarti</h3>
+    <p>Confis Pescara offre consulenza specializzata per gli enti sportivi associati, supportandoli nell'adeguamento alla nuova normativa e nella gestione degli adempimenti.</p>
+  `,btn1:'Contattaci per informazioni',btn1a:'#contatti',btn2:null},
+
+  'news2':{ico:'fas fa-car',title:'Noleggio a Lungo Termine',sub:'Le opportunità targate Confis Pescara',body:`
+    <p>Grazie alle <strong>convenzioni esclusive</strong> stipulate da Confis Pescara, gli associati possono accedere a condizioni privilegiate per il noleggio a lungo termine di veicoli aziendali.</p>
+    <h3>Vantaggi per gli associati</h3>
+    <ul>
+      <li>Tariffe agevolate rispetto al mercato standard</li>
+      <li>Nessun anticipo: canone fisso mensile tutto incluso</li>
+      <li>Manutenzione ordinaria e straordinaria inclusa</li>
+      <li>Assicurazione RCA e kasko comprese</li>
+      <li>Cambio gomme stagionale incluso</li>
+      <li>Vettura sostitutiva in caso di guasto o incidente</li>
+    </ul>
+    <h3>Vantaggi fiscali</h3>
+    <p>Il noleggio a lungo termine offre importanti vantaggi fiscali rispetto all'acquisto: deducibilità del canone, IVA detraibile e nessuna immobilizzazione di capitale.</p>
+    <h3>Come accedere</h3>
+    <p>Contatta la sede di Confis Pescara per richiedere un preventivo personalizzato riservato agli associati. I tempi di attivazione sono molto rapidi.</p>
+  `,btn1:'Richiedi un preventivo',btn1a:'#contatti',btn2:null},
+
+  'news3':{ico:'fas fa-chart-bar',title:'"Come ridurre i costi aziendali"',sub:'Il webinar gratuito per gli associati',body:`
+    <p>Confis Pescara organizza un <strong>webinar gratuito</strong> dedicato alle strategie più efficaci per ottimizzare e ridurre i costi aziendali, riservato agli associati.</p>
+    <h3>Argomenti trattati</h3>
+    <ul>
+      <li>Analisi dei costi fissi e variabili: come ridurli concretamente</li>
+      <li>Welfare aziendale come strumento di risparmio fiscale</li>
+      <li>Finanza agevolata: finanziamenti e crediti d'imposta disponibili</li>
+      <li>Ottimizzazione del costo del lavoro nel rispetto delle norme</li>
+      <li>Noleggio vs acquisto: l'analisi costi-benefici</li>
+      <li>Efficienza energetica: come ridurre le bollette aziendali</li>
+    </ul>
+    <h3>Come partecipare</h3>
+    <p>Il webinar è gratuito e riservato agli associati Confis Pescara. Per registrarsi e ricevere il link di accesso, contatta la nostra sede. I posti sono limitati.</p>
+    <h3>Modalità</h3>
+    <p>Il webinar si svolge online tramite piattaforma Zoom. Durata prevista: 90 minuti con sessione Q&amp;A finale con i nostri esperti.</p>
+  `,btn1:'Iscriviti al webinar',btn1a:'#contatti',btn2:null}
+};
+
+function openModal(id){
+  const m = M[id]; if(!m) return;
+  document.getElementById('modal-content').innerHTML = `
+    <div class="modal-head">
+      <div class="modal-ico"><i class="${m.ico}"></i></div>
+      <div><h2>${m.title}</h2><p>${m.sub}</p></div>
+    </div>
+    <div class="modal-body">
+      ${m.body}
+      <div class="modal-cta">
+        <a href="${m.btn1a}" class="mbtn-p" onclick="closeModalDirect()">${m.btn1}</a>
+        ${m.btn2 ? `<button class="mbtn-s" onclick="openModal('${m.btn2id}')">${m.btn2}</button>` : ''}
+      </div>
+    </div>`;
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(e){ if(e.target===document.getElementById('modal-overlay')) closeModalDirect(); }
+function closeModalDirect(){ document.getElementById('modal-overlay').classList.remove('open'); document.body.style.overflow=''; }
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModalDirect(); });
+
+function toggleMenu(){
+  const ul = document.getElementById('navmenu');
+  const open = ul.style.display==='flex';
+  if(open){
+    ul.removeAttribute('style');
+  } else {
+    Object.assign(ul.style,{display:'flex',flexDirection:'column',position:'fixed',top:'80px',left:'0',background:'#fff',width:'100%',padding:'16px',boxShadow:'0 8px 24px rgba(0,0,0,.12)',zIndex:'800'});
+  }
+}
+</script>
 </body>
 </html>
