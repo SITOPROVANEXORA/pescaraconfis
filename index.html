@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Confis Pescara | Confederazione Italiana Sviluppo Imprese</title>
+<title>Confisi Pescara | Confederazione Italiana Sviluppo Imprese</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <style>
@@ -68,24 +68,24 @@ nav ul li .sub-menu a:hover{background:#f5f8ff;color:var(--blu2);padding-left:24
 /* SERVIZI GRID */
 .servizi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:52px;border:1px solid #ddd;border-radius:12px;overflow:hidden;}
 .serv-card{position:relative;overflow:hidden;cursor:pointer;aspect-ratio:4/3;display:flex;align-items:flex-end;}
-.serv-bg{position:absolute;inset:0;transition:transform .4s;}
+.serv-bg{position:absolute;inset:0;transition:transform .4s;background-size:cover;background-position:center;background-repeat:no-repeat;}
 .serv-card:hover .serv-bg{transform:scale(1.06);}
-.serv-icon-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:4.5rem;color:rgba(255,255,255,.1);}
-.serv-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,28,65,.85) 0%,rgba(12,28,65,.15) 55%,transparent 100%);transition:.3s;}
-.serv-card:hover .serv-overlay{background:linear-gradient(to top,rgba(12,28,65,.93) 0%,rgba(12,28,65,.45) 70%,transparent 100%);}
+.serv-icon-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:4.5rem;color:rgba(255,255,255,.18);}
+.serv-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,28,65,.88) 0%,rgba(12,28,65,.3) 55%,transparent 100%);transition:.3s;}
+.serv-card:hover .serv-overlay{background:linear-gradient(to top,rgba(12,28,65,.96) 0%,rgba(12,28,65,.55) 70%,transparent 100%);}
 .serv-body{position:relative;z-index:2;padding:20px 22px;display:flex;justify-content:space-between;align-items:flex-end;width:100%;}
-.serv-body h3{font-size:.95rem;font-weight:700;color:#fff;}
+.serv-body h3{font-size:.95rem;font-weight:700;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.4);}
 .arrow-btn{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.78rem;flex-shrink:0;transition:.2s;}
 .serv-card:hover .arrow-btn{background:var(--oro);border-color:var(--oro);}
 
 /* NEWS */
 .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:50px;}
 .news-card{background:#fff;border-radius:10px;overflow:hidden;border:1px solid #e8e8e8;transition:.25s;cursor:pointer;}
-.news-card:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(0,0,0,.09);}
-.news-thumb-ph{height:148px;display:flex;align-items:center;justify-content:center;font-size:2.8rem;}
-.n1{background:linear-gradient(135deg,#dde8ff,#b8ccff);}
-.n2{background:linear-gradient(135deg,#fff3cd,#ffd877);}
-.n3{background:linear-gradient(135deg,#d4edda,#8fc99a);}
+.news-card:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(0,0,0,.12);}
+.news-thumb{height:190px;overflow:hidden;position:relative;}
+.news-thumb img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .4s ease;}
+.news-card:hover .news-thumb img{transform:scale(1.05);}
+.news-thumb-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,28,65,.45) 0%,transparent 60%);}
 .news-body{padding:22px;}
 .news-tag{display:inline-block;font-size:.6rem;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;background:var(--grigio);color:var(--blu2);padding:3px 10px;border-radius:10px;margin-bottom:10px;}
 .news-body h3{font-size:.88rem;font-weight:700;color:var(--blu);line-height:1.45;margin-bottom:12px;}
@@ -172,7 +172,7 @@ footer ul li a:hover{color:var(--oro);padding-left:4px;}
       </svg>
     </div>
     <div class="logo-txt">
-      <div class="main">Confis Pescara</div>
+      <div class="main">Confisi Pescara</div>
       <div class="sub">Confederazione Italiana Sviluppo Imprese</div>
     </div>
   </a>
@@ -235,7 +235,7 @@ footer ul li a:hover{color:var(--oro);padding-left:4px;}
   <div class="strip-box" onclick="openModal('convenzioni')">
     <div class="s-ico"><i class="fas fa-star"></i></div>
     <h3>Convenzioni</h3>
-    <p>Gli associati di Confis Pescara hanno la possibilità di accedere a un'ampia gamma di convenzioni esclusive.</p>
+    <p>Gli associati di Confisi Pescara hanno la possibilità di accedere a un'ampia gamma di convenzioni esclusive.</p>
     <span class="s-lnk">Scopri di più</span>
   </div>
 </div>
@@ -247,65 +247,65 @@ footer ul li a:hover{color:var(--oro);padding-left:4px;}
   <p class="s-desc">Offriamo servizi in termini di assistenza ai soci, servizi di tutela sindacale, di sicurezza sul lavoro ai sensi del d.lgs. 81/08, di formazione e di consulenza contrattuale.</p>
   <div class="servizi-grid">
 
+    <!-- Welfare -->
     <div class="serv-card" onclick="openModal('welfare')">
-      <div class="serv-bg" style="background:linear-gradient(135deg,#1b3a6b,#2558a8);position:absolute;inset:0;"></div>
-      <div class="serv-icon-bg"><i class="fas fa-heart"></i></div>
+      <div class="serv-bg" style="background-image:url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80');"></div>
       <div class="serv-overlay"></div>
       <div class="serv-body"><h3>Welfare</h3><div class="arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
     </div>
 
+    <!-- Sicurezza Sul Lavoro -->
     <div class="serv-card" onclick="openModal('sicurezza')">
-      <div class="serv-bg" style="background:linear-gradient(135deg,#0d2040,#1d4e8f);position:absolute;inset:0;"></div>
-      <div class="serv-icon-bg"><i class="fas fa-shield-alt"></i></div>
+      <div class="serv-bg" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80');"></div>
       <div class="serv-overlay"></div>
       <div class="serv-body"><h3>Sicurezza Sul Lavoro</h3><div class="arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
     </div>
 
+    <!-- Formazione -->
     <div class="serv-card" onclick="openModal('formazione')">
-      <div class="serv-bg" style="background:linear-gradient(135deg,#1b3a6b,#b89030);position:absolute;inset:0;"></div>
-      <div class="serv-icon-bg"><i class="fas fa-graduation-cap"></i></div>
+      <div class="serv-bg" style="background-image:url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80');"></div>
       <div class="serv-overlay"></div>
       <div class="serv-body"><h3>Formazione</h3><div class="arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
     </div>
 
+    <!-- Innovazione Tecnologica -->
     <div class="serv-card" onclick="openModal('innovazione')">
-      <div class="serv-bg" style="background:linear-gradient(135deg,#111e40,#2558a8);position:absolute;inset:0;"></div>
-      <div class="serv-icon-bg"><i class="fas fa-microchip"></i></div>
+      <div class="serv-bg" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80');"></div>
       <div class="serv-overlay"></div>
       <div class="serv-body"><h3>Innovazione Tecnologica</h3><div class="arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
     </div>
 
+    <!-- Area Lavoro -->
     <div class="serv-card" onclick="openModal('area-lavoro')">
-      <div class="serv-bg" style="background:linear-gradient(135deg,#c8a84b,#e8c870);position:absolute;inset:0;"></div>
-      <div class="serv-icon-bg" style="color:rgba(0,0,0,.12);"><i class="fas fa-briefcase"></i></div>
+      <div class="serv-bg" style="background-image:url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80');"></div>
       <div class="serv-overlay"></div>
       <div class="serv-body"><h3>Area Lavoro</h3><div class="arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
     </div>
 
+    <!-- Internazionalizzazione -->
     <div class="serv-card" onclick="openModal('internazionalizzazione')">
-      <div class="serv-bg" style="background:linear-gradient(135deg,#1b3a6b,#3a7bd5);position:absolute;inset:0;"></div>
-      <div class="serv-icon-bg"><i class="fas fa-globe"></i></div>
+      <div class="serv-bg" style="background-image:url('https://images.unsplash.com/photo-1531973576160-7125cd663d86?w=800&q=80');"></div>
       <div class="serv-overlay"></div>
       <div class="serv-body"><h3>Internazionalizzazione</h3><div class="arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
     </div>
 
+    <!-- Medicina del Lavoro -->
     <div class="serv-card" onclick="openModal('medicina')">
-      <div class="serv-bg" style="background:linear-gradient(135deg,#0d2040,#1d4e8f);position:absolute;inset:0;"></div>
-      <div class="serv-icon-bg"><i class="fas fa-stethoscope"></i></div>
+      <div class="serv-bg" style="background-image:url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=80');"></div>
       <div class="serv-overlay"></div>
       <div class="serv-body"><h3>Medicina del Lavoro</h3><div class="arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
     </div>
 
+    <!-- Finanza Agevolata -->
     <div class="serv-card" onclick="openModal('finanza')">
-      <div class="serv-bg" style="background:linear-gradient(135deg,#1b3a6b,#4a8fe0);position:absolute;inset:0;"></div>
-      <div class="serv-icon-bg"><i class="fas fa-chart-line"></i></div>
+      <div class="serv-bg" style="background-image:url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80');"></div>
       <div class="serv-overlay"></div>
       <div class="serv-body"><h3>Finanza Agevolata</h3><div class="arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
     </div>
 
+    <!-- Sostenibilità -->
     <div class="serv-card" onclick="openModal('sostenibilita')">
-      <div class="serv-bg" style="background:linear-gradient(135deg,#1b3a6b,#2e8b5a);position:absolute;inset:0;"></div>
-      <div class="serv-icon-bg"><i class="fas fa-leaf"></i></div>
+      <div class="serv-bg" style="background-image:url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80');"></div>
       <div class="serv-overlay"></div>
       <div class="serv-body"><h3>Sostenibilità</h3><div class="arrow-btn"><i class="fas fa-arrow-right"></i></div></div>
     </div>
@@ -318,30 +318,43 @@ footer ul li a:hover{color:var(--oro);padding-left:4px;}
   <span class="s-eyebrow">Resta informato</span>
   <div class="s-title">Ricevi tutti gli aggiornamenti e scopri<br>le novità tramite il nostro blog</div>
   <div class="news-grid">
+
     <div class="news-card" onclick="openModal('news1')">
-      <div class="news-thumb-ph n1"><i class="fas fa-running"></i></div>
+      <div class="news-thumb">
+        <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=700&q=80" alt="Enti di Promozione Sportiva" loading="lazy"/>
+        <div class="news-thumb-overlay"></div>
+      </div>
       <div class="news-body">
         <span class="news-tag">NEWS</span>
         <h3>Composizione Enti di Promozione Sportiva: chiarimenti e approfondimenti</h3>
         <a href="#" onclick="openModal('news1');return false;">Leggi di più »</a>
       </div>
     </div>
+
     <div class="news-card" onclick="openModal('news2')">
-      <div class="news-thumb-ph n2"><i class="fas fa-car"></i></div>
+      <div class="news-thumb">
+        <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=700&q=80" alt="Noleggio a lungo termine" loading="lazy"/>
+        <div class="news-thumb-overlay"></div>
+      </div>
       <div class="news-body">
         <span class="news-tag">NEWS</span>
-        <h3>Noleggio a lungo termine: le opportunità targate Confis Pescara</h3>
+        <h3>Noleggio a lungo termine: le opportunità targate Confisi Pescara</h3>
         <a href="#" onclick="openModal('news2');return false;">Leggi di più »</a>
       </div>
     </div>
+
     <div class="news-card" onclick="openModal('news3')">
-      <div class="news-thumb-ph n3"><i class="fas fa-chart-bar"></i></div>
+      <div class="news-thumb">
+        <img src="https://images.unsplash.com/photo-1553484771-047a44eee27a?w=700&q=80" alt="Webinar riduzione costi" loading="lazy"/>
+        <div class="news-thumb-overlay"></div>
+      </div>
       <div class="news-body">
         <span class="news-tag">NEWS</span>
         <h3>"Come ridurre i costi aziendali": il webinar gratuito</h3>
         <a href="#" onclick="openModal('news3');return false;">Leggi di più »</a>
       </div>
     </div>
+
   </div>
   <div class="news-cta">
     <a href="#" class="btn-w" style="background:var(--blu);color:#fff;">Vedi più articoli</a>
@@ -353,7 +366,7 @@ footer ul li a:hover{color:var(--oro);padding-left:4px;}
   <div style="text-align:center;">
     <span class="s-eyebrow">Territorio</span>
     <div class="s-title" style="text-align:center;">Unioni territoriali</div>
-    <p class="s-desc" style="margin:0 auto 36px;text-align:center;">Confis Pescara fa parte della rete nazionale Confisi, con sedi e unioni territoriali presenti in tutta Italia.</p>
+    <p class="s-desc" style="margin:0 auto 36px;text-align:center;">Confisi Pescara fa parte della rete nazionale Confisi, con sedi e unioni territoriali presenti in tutta Italia.</p>
     <div style="display:flex;justify-content:center;gap:18px;flex-wrap:wrap;">
       <div style="background:var(--grigio);border-radius:10px;padding:22px 30px;min-width:155px;cursor:pointer;" onclick="openModal('chisiamo')">
         <div style="font-size:1.8rem;color:var(--blu2);margin-bottom:8px;"><i class="fas fa-map-marker-alt"></i></div>
@@ -377,9 +390,9 @@ footer ul li a:hover{color:var(--oro);padding-left:4px;}
 <!-- CTA BAND -->
 <div class="cta-band">
   <span class="eyebrow">CONFEDERAZIONE ITALIANA SVILUPPO IMPRESE</span>
-  <h2>Vuoi aderire a Confis Pescara?</h2>
+  <h2>Vuoi aderire a Confisi Pescara?</h2>
   <p>Entra nella nostra rete e accedi a tutti i servizi e le convenzioni riservate agli associati.</p>
-  <a href="#" class="btn-w" onclick="openModal('iscrizione');return false;"><i class="fas fa-file-signature"></i> Iscriviti a Confis Pescara</a>
+  <a href="#" class="btn-w" onclick="openModal('iscrizione');return false;"><i class="fas fa-file-signature"></i> Iscriviti a Confisi Pescara</a>
 </div>
 
 <!-- FOOTER / CONTATTI -->
@@ -395,7 +408,7 @@ footer ul li a:hover{color:var(--oro);padding-left:4px;}
           </svg>
         </div>
         <div>
-          <div class="f-logo-main">Confis Pescara</div>
+          <div class="f-logo-main">Confisi Pescara</div>
           <div class="f-logo-sub">Confederazione Italiana Sviluppo Imprese</div>
         </div>
       </div>
@@ -437,13 +450,13 @@ footer ul li a:hover{color:var(--oro);padding-left:4px;}
       <ul>
         <li><a href="#"><i class="fas fa-map-marker-alt" style="width:14px;margin-right:4px;"></i> Via dei Marrucini 51, Pescara</a></li>
         <li><a href="tel:+390850000000"><i class="fas fa-phone" style="width:14px;margin-right:4px;"></i> +39 085 000 0000</a></li>
-        <li><a href="mailto:info@confispescara.it"><i class="fas fa-envelope" style="width:14px;margin-right:4px;"></i> info@confispescara.it</a></li>
+        <li><a href="mailto:info@confisipescara.it"><i class="fas fa-envelope" style="width:14px;margin-right:4px;"></i> info@confisipescara.it</a></li>
         <li><a href="#"><i class="fas fa-clock" style="width:14px;margin-right:4px;"></i> Lun–Ven 9:00–18:00</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>Copyright ©2025, Confis Pescara</span>
+    <span>Copyright ©2025, Confisi Pescara</span>
     <div><a href="#">Privacy &amp; Cookie Policy</a></div>
   </div>
 </footer>
@@ -458,8 +471,8 @@ footer ul li a:hover{color:var(--oro);padding-left:4px;}
 
 <script>
 const M = {
-  'chisiamo':{ico:'fas fa-users',title:'Chi Siamo',sub:'Confederazione Italiana Sviluppo Imprese – Confis Pescara',body:`
-    <p>Confis Pescara è un'<strong>Associazione di Rappresentanza Sindacale dei Datori di Lavoro</strong>, apartitica e senza scopo di lucro, parte del sistema nazionale Confisi.</p>
+  'chisiamo':{ico:'fas fa-users',title:'Chi Siamo',sub:'Confederazione Italiana Sviluppo Imprese – Confisi Pescara',body:`
+    <p>Confisi Pescara è un'<strong>Associazione di Rappresentanza Sindacale dei Datori di Lavoro</strong>, apartitica e senza scopo di lucro, parte del sistema nazionale Confisi.</p>
     <p>Si articola in Unioni Territoriali e Federazioni regionali che, insieme, costituiscono il sistema di rappresentanza generale e unitario delle imprese orientate alla produzione, organizzazione ed erogazione di beni e/o servizi con organizzazione commerciale, artigianale, agricola e industriale.</p>
     <h3>La nostra missione</h3>
     <p>Rappresentare e tutelare le imprese del territorio pescarese, promuovendo uno sviluppo sicuro, sostenibile e in linea con le normative vigenti. Siamo al servizio di imprenditori e lavoratori ogni giorno.</p>
@@ -477,8 +490,8 @@ const M = {
     <p><i class="fas fa-map-marker-alt" style="color:var(--blu2);margin-right:6px;"></i> Via dei Marrucini 51, 65100 Pescara (PE)</p>
   `,btn1:'Contattaci',btn1a:'#contatti',btn2:'Iscriviti',btn2id:'iscrizione'},
 
-  'convenzioni':{ico:'fas fa-star',title:'Convenzioni Esclusive',sub:'Vantaggi riservati ai soci Confis Pescara',body:`
-    <p>Gli associati di Confis Pescara hanno la possibilità di accedere a un'ampia gamma di <strong>convenzioni esclusive</strong>, frutto di accordi con partner selezionati a livello locale e nazionale.</p>
+  'convenzioni':{ico:'fas fa-star',title:'Convenzioni Esclusive',sub:'Vantaggi riservati ai soci Confisi Pescara',body:`
+    <p>Gli associati di Confisi Pescara hanno la possibilità di accedere a un'ampia gamma di <strong>convenzioni esclusive</strong>, frutto di accordi con partner selezionati a livello locale e nazionale.</p>
     <h3>Tipologie di convenzioni</h3>
     <ul>
       <li><strong>Noleggio a lungo termine:</strong> tariffe agevolate per veicoli aziendali</li>
@@ -513,7 +526,7 @@ const M = {
   `,btn1:'Richiedi una consulenza',btn1a:'#contatti',btn2:'Iscriviti',btn2id:'iscrizione'},
 
   'sicurezza':{ico:'fas fa-shield-alt',title:'Sicurezza sul Lavoro',sub:'Consulenza e adempimenti ai sensi del D.Lgs. 81/08',body:`
-    <p>La sicurezza sul lavoro è un obbligo di legge e un valore fondamentale. Confis Pescara offre un servizio completo per garantire la <strong>conformità al D.Lgs. 81/2008</strong> e proteggere lavoratori e imprese da rischi e sanzioni.</p>
+    <p>La sicurezza sul lavoro è un obbligo di legge e un valore fondamentale. Confisi Pescara offre un servizio completo per garantire la <strong>conformità al D.Lgs. 81/2008</strong> e proteggere lavoratori e imprese da rischi e sanzioni.</p>
     <h3>Servizi offerti</h3>
     <ul>
       <li><strong>Redazione DVR</strong> – Documento di Valutazione dei Rischi</li>
@@ -531,7 +544,7 @@ const M = {
   `,btn1:'Richiedi una consulenza',btn1a:'#contatti',btn2:'Iscriviti',btn2id:'iscrizione'},
 
   'formazione':{ico:'fas fa-graduation-cap',title:'Formazione',sub:'Corsi e programmi formativi accreditati per imprese e lavoratori',body:`
-    <p>La formazione continua è essenziale per la crescita professionale e la competitività aziendale. Confis Pescara organizza e gestisce <strong>corsi accreditati</strong> in diversi ambiti.</p>
+    <p>La formazione continua è essenziale per la crescita professionale e la competitività aziendale. Confisi Pescara organizza e gestisce <strong>corsi accreditati</strong> in diversi ambiti.</p>
     <h3>Aree di formazione</h3>
     <ul>
       <li><strong>Formazione obbligatoria:</strong> sicurezza sul lavoro, privacy, antincendio, primo soccorso</li>
@@ -546,7 +559,7 @@ const M = {
   `,btn1:'Vedi il calendario corsi',btn1a:'#contatti',btn2:'Iscriviti',btn2id:'iscrizione'},
 
   'internazionalizzazione':{ico:'fas fa-globe',title:'Internazionalizzazione',sub:'Supporto alle imprese che si affacciano sui mercati esteri',body:`
-    <p>Espandersi all'estero è un'opportunità straordinaria per le PMI italiane. Confis Pescara offre <strong>supporto completo per l'internazionalizzazione</strong> delle imprese associate.</p>
+    <p>Espandersi all'estero è un'opportunità straordinaria per le PMI italiane. Confisi Pescara offre <strong>supporto completo per l'internazionalizzazione</strong> delle imprese associate.</p>
     <h3>I nostri servizi</h3>
     <ul>
       <li>Analisi dei mercati esteri e identificazione delle opportunità</li>
@@ -577,7 +590,7 @@ const M = {
   `,btn1:'Analisi gratuita',btn1a:'#contatti',btn2:'Iscriviti',btn2id:'iscrizione'},
 
   'medicina':{ico:'fas fa-stethoscope',title:'Medicina del Lavoro',sub:'Sorveglianza sanitaria e adempimenti normativi',body:`
-    <p>La sorveglianza sanitaria è un obbligo previsto dal D.Lgs. 81/2008. Confis Pescara gestisce in modo completo tutti gli adempimenti di <strong>medicina del lavoro</strong> per le imprese associate.</p>
+    <p>La sorveglianza sanitaria è un obbligo previsto dal D.Lgs. 81/2008. Confisi Pescara gestisce in modo completo tutti gli adempimenti di <strong>medicina del lavoro</strong> per le imprese associate.</p>
     <h3>Servizi di Medicina del Lavoro</h3>
     <ul>
       <li><strong>Nomina del Medico Competente</strong> aziendale</li>
@@ -594,7 +607,7 @@ const M = {
   `,btn1:'Prenota una visita',btn1a:'#contatti',btn2:'Iscriviti',btn2id:'iscrizione'},
 
   'innovazione':{ico:'fas fa-microchip',title:'Innovazione Tecnologica',sub:'Supporto alla trasformazione digitale delle imprese',body:`
-    <p>La trasformazione digitale non è più un'opzione, ma una necessità competitiva. Confis Pescara supporta le imprese associate nel percorso di <strong>digitalizzazione e innovazione</strong>.</p>
+    <p>La trasformazione digitale non è più un'opzione, ma una necessità competitiva. Confisi Pescara supporta le imprese associate nel percorso di <strong>digitalizzazione e innovazione</strong>.</p>
     <h3>Aree di intervento</h3>
     <ul>
       <li><strong>Transizione 4.0:</strong> Industria 4.0, IoT, automazione industriale</li>
@@ -626,7 +639,7 @@ const M = {
   `,btn1:'Richiedi una consulenza ESG',btn1a:'#contatti',btn2:'Iscriviti',btn2id:'iscrizione'},
 
   'area-lavoro':{ico:'fas fa-briefcase',title:'Area Lavoro',sub:'Assistenza completa nella gestione dei rapporti di lavoro',body:`
-    <p>L'area lavoro di Confis Pescara fornisce <strong>assistenza e consulenza completa</strong> nella gestione dei rapporti di lavoro, dalla contrattualistica alla risoluzione delle controversie sindacali.</p>
+    <p>L'area lavoro di Confisi Pescara fornisce <strong>assistenza e consulenza completa</strong> nella gestione dei rapporti di lavoro, dalla contrattualistica alla risoluzione delle controversie sindacali.</p>
     <h3>Servizi inclusi</h3>
     <ul>
       <li><strong>Assistenza contrattuale:</strong> redazione e revisione di contratti di lavoro</li>
@@ -642,8 +655,8 @@ const M = {
     <p>Rappresentiamo i datori di lavoro nei tavoli sindacali e nelle trattative con le organizzazioni dei lavoratori, garantendo un supporto professionale e competente in ogni fase.</p>
   `,btn1:'Richiedi assistenza',btn1a:'#contatti',btn2:'Iscriviti',btn2id:'iscrizione'},
 
-  'iscrizione':{ico:'fas fa-file-signature',title:'Come Iscriversi',sub:'Entra nella rete Confis Pescara',body:`
-    <p>Aderire a Confis Pescara è semplice e immediato. In pochi passi avrai accesso a tutti i servizi e le convenzioni riservate agli associati.</p>
+  'iscrizione':{ico:'fas fa-file-signature',title:'Come Iscriversi',sub:'Entra nella rete Confisi Pescara',body:`
+    <p>Aderire a Confisi Pescara è semplice e immediato. In pochi passi avrai accesso a tutti i servizi e le convenzioni riservate agli associati.</p>
     <h3>Il percorso di adesione</h3>
     <ul>
       <li><strong>1. Contattaci</strong> – Chiamaci o scrivi per fissare un primo incontro gratuito</li>
@@ -665,7 +678,7 @@ const M = {
     <h3>Contatti</h3>
     <p><i class="fas fa-map-marker-alt" style="color:var(--blu2);margin-right:5px;"></i> Via dei Marrucini 51, Pescara<br>
     <i class="fas fa-phone" style="color:var(--blu2);margin-right:5px;"></i> +39 085 000 0000<br>
-    <i class="fas fa-envelope" style="color:var(--blu2);margin-right:5px;"></i> info@confispescara.it</p>
+    <i class="fas fa-envelope" style="color:var(--blu2);margin-right:5px;"></i> info@confisipescara.it</p>
   `,btn1:'Contattaci ora',btn1a:'#contatti',btn2:null},
 
   'news1':{ico:'fas fa-running',title:'Composizione Enti di Promozione Sportiva',sub:'Chiarimenti e approfondimenti normativi',body:`
@@ -680,11 +693,11 @@ const M = {
       <li>Esonero contributivo per compensi entro determinate soglie annuali</li>
     </ul>
     <h3>Come possiamo aiutarti</h3>
-    <p>Confis Pescara offre consulenza specializzata per gli enti sportivi associati, supportandoli nell'adeguamento alla nuova normativa e nella gestione degli adempimenti.</p>
+    <p>Confisi Pescara offre consulenza specializzata per gli enti sportivi associati, supportandoli nell'adeguamento alla nuova normativa e nella gestione degli adempimenti.</p>
   `,btn1:'Contattaci per informazioni',btn1a:'#contatti',btn2:null},
 
-  'news2':{ico:'fas fa-car',title:'Noleggio a Lungo Termine',sub:'Le opportunità targate Confis Pescara',body:`
-    <p>Grazie alle <strong>convenzioni esclusive</strong> stipulate da Confis Pescara, gli associati possono accedere a condizioni privilegiate per il noleggio a lungo termine di veicoli aziendali.</p>
+  'news2':{ico:'fas fa-car',title:'Noleggio a Lungo Termine',sub:'Le opportunità targate Confisi Pescara',body:`
+    <p>Grazie alle <strong>convenzioni esclusive</strong> stipulate da Confisi Pescara, gli associati possono accedere a condizioni privilegiate per il noleggio a lungo termine di veicoli aziendali.</p>
     <h3>Vantaggi per gli associati</h3>
     <ul>
       <li>Tariffe agevolate rispetto al mercato standard</li>
@@ -697,11 +710,11 @@ const M = {
     <h3>Vantaggi fiscali</h3>
     <p>Il noleggio a lungo termine offre importanti vantaggi fiscali rispetto all'acquisto: deducibilità del canone, IVA detraibile e nessuna immobilizzazione di capitale.</p>
     <h3>Come accedere</h3>
-    <p>Contatta la sede di Confis Pescara per richiedere un preventivo personalizzato riservato agli associati. I tempi di attivazione sono molto rapidi.</p>
+    <p>Contatta la sede di Confisi Pescara per richiedere un preventivo personalizzato riservato agli associati. I tempi di attivazione sono molto rapidi.</p>
   `,btn1:'Richiedi un preventivo',btn1a:'#contatti',btn2:null},
 
   'news3':{ico:'fas fa-chart-bar',title:'"Come ridurre i costi aziendali"',sub:'Il webinar gratuito per gli associati',body:`
-    <p>Confis Pescara organizza un <strong>webinar gratuito</strong> dedicato alle strategie più efficaci per ottimizzare e ridurre i costi aziendali, riservato agli associati.</p>
+    <p>Confisi Pescara organizza un <strong>webinar gratuito</strong> dedicato alle strategie più efficaci per ottimizzare e ridurre i costi aziendali, riservato agli associati.</p>
     <h3>Argomenti trattati</h3>
     <ul>
       <li>Analisi dei costi fissi e variabili: come ridurli concretamente</li>
@@ -712,7 +725,7 @@ const M = {
       <li>Efficienza energetica: come ridurre le bollette aziendali</li>
     </ul>
     <h3>Come partecipare</h3>
-    <p>Il webinar è gratuito e riservato agli associati Confis Pescara. Per registrarsi e ricevere il link di accesso, contatta la nostra sede. I posti sono limitati.</p>
+    <p>Il webinar è gratuito e riservato agli associati Confisi Pescara. Per registrarsi e ricevere il link di accesso, contatta la nostra sede. I posti sono limitati.</p>
     <h3>Modalità</h3>
     <p>Il webinar si svolge online tramite piattaforma Zoom. Durata prevista: 90 minuti con sessione Q&amp;A finale con i nostri esperti.</p>
   `,btn1:'Iscriviti al webinar',btn1a:'#contatti',btn2:null}
